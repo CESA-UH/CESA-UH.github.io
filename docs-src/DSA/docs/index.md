@@ -10,5 +10,7 @@
 |    ۲ | تحلیل الگوریتم‌ها  | ۲۴ شهریور ۱۴۰۵ |                                                                                                                           |                        |                                                                                                  |
 
 **مراجع درس**:
+
 - داده‌ساختارها و مبانی‌الگوریتم‌ها، محمد قدسی، انتشارات فاطمی
+
 -  T. Cormen, C. Leiserson, R. Rivest, and C. Stein. Introduction to Algorithms. 4th Edition, MIT Press, 2022 (CLRS)
