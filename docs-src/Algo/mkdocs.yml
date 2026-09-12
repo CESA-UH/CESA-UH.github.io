@@ -1,0 +1,58 @@
+site_name: طراحی الگوریتم‌ها
+site_description: ویدیوها، جزوات، تمارین و کدهای درس طراحی الگوریتم‌ها
+site_dir: ../../courses/Algo
+docs_dir: docs
+use_directory_urls: true
+
+theme:
+  name: material
+  language: fa
+  logo: assets/logo-navy.png
+  favicon: assets/logo-navy.png
+  font: false
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: تغییر به حالت تاریک
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: تغییر به حالت روشن
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - خانه: index.md
+  - پاییز ۱۴۰۵-۱۴۰۶:
+      - برنامه زمانی: 1405-1406-paeez/schedule.md
+      - ویدیوها: 1405-1406-paeez/videos.md
+      - جزوه و کتاب: 1405-1406-paeez/notes.md
+      - تمارین: 1405-1406-paeez/exercises.md
+      - کدها: 1405-1406-paeez/code.md
+
+copyright: دانشگاه هرمزگان — دانشکده مهندسی کامپیوتر
