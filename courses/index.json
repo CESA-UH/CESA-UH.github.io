@@ -17,24 +17,7 @@
     "term_fa": "پاییز ۱۴۰۵-۱۴۰۶",
     "term_en": "Fall 1405-1406"
   },
-  {
-    "id": "DS",
-    "title_fa": "ساختمان داده‌ها",
-    "title_en": "Data Structures",
-    "desc_fa": "ویدیوها، جزوات، تمارین و کدهای درس ساختمان داده‌ها",
-    "desc_en": "Videos, notes, exercises, and code for Data Structures",
-    "term_fa": "پاییز ۱۴۰۵-۱۴۰۶",
-    "term_en": "Fall 1405-1406"
-  },
-  {
-    "id": "AlgoDesign",
-    "title_fa": "طراحی الگوریتم",
-    "title_en": "Design of Algorithms",
-    "desc_fa": "ویدیوها، جزوات، تمارین و کدهای درس طراحی الگوریتم",
-    "desc_en": "Videos, notes, exercises, and code for Design of Algorithms",
-    "term_fa": "پاییز ۱۴۰۵-۱۴۰۶",
-    "term_en": "Fall 1405-1406"
-  },
+
   {
     "id": "DSA",
     "title_fa": "ساختار داده‌ها و الگوریتم",
