@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap");
+
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #071633;
+  --md-primary-fg-color--light: #123067;
+  --md-primary-fg-color--dark: #050f24;
+  --md-accent-fg-color: #2f6fe0;
+  --md-typeset-a-color: #2f6fe0;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #0b2149;
+  --md-accent-fg-color: #7db8ff;
+  --md-default-bg-color: #060b16;
+  --md-typeset-a-color: #7db8ff;
+}
+
+body,
+.md-typeset {
+  font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+}

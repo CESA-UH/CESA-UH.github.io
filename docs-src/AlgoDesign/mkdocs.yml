@@ -1,0 +1,51 @@
+site_name: طراحی الگوریتم
+site_description: ویدیوها، جزوات، تمارین و کدهای درس طراحی الگوریتم
+site_dir: ../../courses/AlgoDesign
+docs_dir: docs
+use_directory_urls: true
+
+theme:
+  name: material
+  language: fa
+  logo: assets/logo-navy.png
+  favicon: assets/logo-navy.png
+  font: false
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: تغییر به حالت تاریک
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: تغییر به حالت روشن
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - پاییز ۱۴۰۵-۱۴۰۶: index.md
+
+copyright: دانشگاه هرمزگان — دانشکده مهندسی کامپیوتر
