@@ -1,5 +1,5 @@
 **«داده ساختار و الگوریتم‌ها» - پاییز ۱۴۰۵**
-**استاد: دکتر شهرام گلزاری**
+**استاد:** دکتر شهرام گلزاری
 
 #### برنامه جلسات
 
@@ -8,3 +8,6 @@
 |    ۱ | معرفی درس و انتزاع | ۲۲ شهریور ۱۴۰۵ | [اسلاید‌های جلسه اول](https://github.com/amirrezabb/UoH-DSA-14051/blob/main/docs/assets/1_IntroductionAndAbstraction.pdf) | فصل اول کتاب دکتر قدسی | [تمرین جلسه اول](https://github.com/amirrezabb/UoH-DSA-14051/blob/main/docs/assets/WarmUP-1.pdf) |
 |    ۲ | تحلیل الگوریتم‌ها  | ۲۴ شهریور ۱۴۰۵ |                                                                                                                           |                        |                                                                                                  |
 
+**مراجع درس**:
+- داده‌ساختارها و مبانی‌الگوریتم‌ها، محمد قدسی، انتشارات فاطمی
+-  T. Cormen, C. Leiserson, R. Rivest, and C. Stein. Introduction to Algorithms. 4th Edition, MIT Press, 2022 (CLRS)
