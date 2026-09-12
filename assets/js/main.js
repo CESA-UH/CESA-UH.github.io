@@ -94,96 +94,66 @@
     update();
   }
 
-  function docsBasePath() {
-    return location.pathname.indexOf("/courses/") !== -1 ? "../" : "courses/";
-  }
-
-  function currentCourseId() {
-    var m = location.pathname.match(/\/courses\/([^/]+)\//);
-    return m ? m[1] : null;
-  }
-
-  function initSidebarCourseList() {
-    var lists = document.querySelectorAll(".sidebar-course-list");
-    if (!lists.length) return;
-    var base = docsBasePath();
-    var activeId = currentCourseId();
-    fetch(base + "index.json")
-      .then(function (res) { return res.json(); })
-      .then(function (courses) {
-        lists.forEach(function (list) {
-          list.innerHTML = "";
-          courses.forEach(function (course) {
-            var li = document.createElement("li");
-            var a = document.createElement("a");
-            a.href = base + course.id + "/index.html";
-            a.dataset.fa = course.title_fa;
-            a.dataset.en = course.title_en;
-            if (course.id === activeId) a.classList.add("active");
-            li.appendChild(a);
-            list.appendChild(li);
-          });
-        });
-        applyLang(currentLang());
-      });
-  }
-
-  function initPageNavScrollSpy() {
-    var links = document.querySelectorAll(".sidebar-page-nav a");
-    if (!links.length) return;
-    var sections = [];
-    links.forEach(function (link) {
-      var id = link.getAttribute("href").replace("#", "");
-      var section = document.getElementById(id);
-      if (section) sections.push({ link: link, section: section });
-    });
-    if (!sections.length || !("IntersectionObserver" in window)) return;
-
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          var match = sections.find(function (s) { return s.section === entry.target; });
-          if (!match) return;
-          if (entry.isIntersecting) {
-            sections.forEach(function (s) { s.link.classList.remove("active"); });
-            match.link.classList.add("active");
-          }
-        });
-      },
-      { rootMargin: "-20% 0px -70% 0px" }
-    );
-    sections.forEach(function (s) { observer.observe(s.section); });
-  }
-
   function initCourseGrid() {
-    var grid = document.getElementById("course-grid");
-    if (!grid) return;
+    var container = document.getElementById("course-groups");
+    if (!container) return;
     fetch("courses/index.json")
       .then(function (res) { return res.json(); })
       .then(function (courses) {
-        grid.innerHTML = "";
+        container.innerHTML = "";
+
+        var termOrder = [];
+        var termCourses = {};
         courses.forEach(function (course) {
-          var a = document.createElement("a");
-          a.className = "course-card reveal";
-          a.href = "courses/" + course.id + "/index.html";
-
-          var badge = document.createElement("span");
-          badge.className = "badge";
-          badge.textContent = course.id.toUpperCase();
-
-          var h3 = document.createElement("h3");
-          h3.dataset.fa = course.title_fa;
-          h3.dataset.en = course.title_en;
-
-          var p = document.createElement("p");
-          p.dataset.fa = course.desc_fa;
-          p.dataset.en = course.desc_en;
-
-          a.appendChild(badge);
-          a.appendChild(h3);
-          a.appendChild(p);
-          grid.appendChild(a);
+          var key = course.term_fa || "";
+          if (!termCourses[key]) {
+            termCourses[key] = [];
+            termOrder.push(key);
+          }
+          termCourses[key].push(course);
         });
+
+        termOrder.forEach(function (termKey) {
+          var group = document.createElement("div");
+          group.className = "term-group";
+
+          var heading = document.createElement("h3");
+          heading.className = "term-heading";
+          var termCourse = termCourses[termKey][0];
+          heading.dataset.fa = termCourse.term_fa;
+          heading.dataset.en = termCourse.term_en || termCourse.term_fa;
+          group.appendChild(heading);
+
+          var grid = document.createElement("div");
+          grid.className = "course-grid";
+
+          termCourses[termKey].forEach(function (course) {
+            var a = document.createElement("a");
+            a.className = "course-card reveal";
+            a.href = "courses/" + course.id + "/index.html";
+
+            var badge = document.createElement("span");
+            badge.className = "badge";
+            badge.textContent = course.id.toUpperCase();
+
+            var h3 = document.createElement("h3");
+            h3.dataset.fa = course.title_fa;
+            h3.dataset.en = course.title_en;
+
+            var p = document.createElement("p");
+            p.dataset.fa = course.desc_fa;
+            p.dataset.en = course.desc_en;
+
+            a.appendChild(badge);
+            a.appendChild(h3);
+            a.appendChild(p);
+            grid.appendChild(a);
+          });
+
+          group.appendChild(grid);
+          container.appendChild(group);
+        });
+
         applyLang(currentLang());
         initReveal();
       });
@@ -195,7 +165,5 @@
     initReveal();
     initCourseGrid();
     initScrollProgress();
-    initSidebarCourseList();
-    initPageNavScrollSpy();
   });
 })();

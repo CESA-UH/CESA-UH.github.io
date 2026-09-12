@@ -2,37 +2,65 @@
 
 سایت مستندات گروه برق و کامپیوتر دانشگاه هرمزگان.
 
-## افزودن محتوای یک درس
+هر درس یک سایت مستقل [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) دارد. سورس هر درس در `docs-src/<شناسه‌درس>/` است و خروجی build شده در `courses/<شناسه‌درس>/` قرار می‌گیرد (همان مسیری که از صفحه‌ی اصلی لینک شده).
 
-هر درس یک پوشه در `courses/<نام‌درس>/` دارد که شامل `index.html` و `data.json` است. برای افزودن محتوا فقط `data.json` را ویرایش کنید:
+## نصب
 
-```json
-{
-  "schedule": [
-    {
-      "week": 1,
-      "session": 1,
-      "date": "2026-09-23",
-      "title_fa": "مقدمه و مرور",
-      "title_en": "Introduction & Review",
-      "materials": [{ "title_fa": "اسلاید", "title_en": "Slides", "href": "slides/s1.pdf" }],
-      "homework": { "title_fa": "تمرین ۱", "title_en": "Exercise 1", "href": "exercises/hw1.pdf" },
-      "deadline": "2026-09-30"
-    }
-  ],
-  "videos": [{ "title_fa": "جلسه ۱", "title_en": "Session 1", "src": "videos/session1.mp4" }],
-  "notes": [{ "title_fa": "جزوه فصل ۱", "title_en": "Chapter 1 notes", "href": "notes/ch1.pdf" }],
-  "exercises": [{ "title_fa": "تمرین ۱", "title_en": "Exercise 1", "href": "exercises/hw1.pdf" }],
-  "code": [{ "title_fa": "کد جلسه ۱", "title_en": "Session 1 code", "href": "https://github.com/..." }]
-}
+```bash
+pip install mkdocs-material
 ```
 
-`src` و `href` می‌توانند مسیر نسبی به فایلی در همان پوشه، یا لینک کامل (مثلاً لینک raw فایل mp4 آپلودشده در گیت‌هاب) باشند.
+## افزودن یا ویرایش جلسات یک ترم
 
-در `schedule`، `date` و `deadline` را همیشه به فرمت میلادی ساده `YYYY-MM-DD` بنویسید — سایت خودش آن‌ها را به تاریخ شمسی تبدیل و نمایش می‌دهد. `week` و `session` عدد هفته و شماره جلسه هستند (اختیاری؛ اگر ننویسید، شماره جلسه خودکار از روی ترتیب آرایه محاسبه می‌شود). `materials` آرایه‌ای از لینک‌هاست (اسلاید، جزوه و...) و `homework`/`deadline` اختیاری‌اند؛ هر فیلدی که برای یک جلسه لازم نیست را حذف کنید.
+جدول جلسات هر ترم یک فایل مارک‌داون است، مثلاً برای ترم جاری:
 
-## افزودن یک درس جدید
+```
+docs-src/Algo/docs/index.md
+```
 
-1. پوشه‌ای مثل `courses/NEW/` بسازید و `index.html` یکی از دروس موجود را در آن کپی کنید (فقط عنوان‌ها را عوض کنید).
-2. یک `data.json` خالی مثل بقیه دروس در همان پوشه بسازید.
-3. یک رکورد جدید به `courses/index.json` اضافه کنید.
+هر جلسه یک ردیف از جدول است:
+
+```markdown
+| جلسه | عنوان | تاریخ | ویدئو | اسلاید | جزوه | تمرین | کد |
+|---:|---|---|---|---|---|---|---|
+| ۱ | مقدمه و مرور | ۱ مهر | [مشاهده](1405-1406-paeez/assets/videos/session1.mp4){ target="_blank" rel="noopener noreferrer" } | [اسلاید](1405-1406-paeez/assets/slides/s1.pdf){ target="_blank" rel="noopener noreferrer" } | ... | ... | ... |
+```
+
+فایل‌های واقعی (اسلاید/ویدیو/جزوه/تمرین) را در پوشه‌ی
+`docs-src/<شناسه‌درس>/docs/1405-1406-paeez/assets/{slides,videos,notes,exercises}/`
+قرار دهید و در لینک‌های جدول به همان مسیر نسبی اشاره کنید؛ یا به‌جای فایل محلی، لینک کامل (مثلاً لینک release گیت‌هاب) بگذارید. ستونی که برای یک جلسه لازم نیست را با `-` پر کنید.
+
+پیش‌نمایش زنده حین ویرایش:
+
+```bash
+cd docs-src/Algo
+mkdocs serve
+```
+
+## افزودن ترم جدید
+
+۱. یک صفحه‌ی مارک‌داون جدید برای ترم جاری فعلی بسازید (مثلاً `docs-src/Algo/docs/1405-1406-paeez.md`) و محتوای فعلی `index.md` را به آن منتقل کنید (آرشیو ترم گذشته).
+۲. جدول ترم جدید را در `docs-src/Algo/docs/index.md` بنویسید (این فایل همیشه صفحه‌ی اصلی و ترم جاری است).
+۳. در `docs-src/Algo/mkdocs.yml` یک ردیف به `nav` اضافه کنید تا ترم آرشیوشده هم در نویگیشن دیده شود:
+
+```yaml
+nav:
+  - پاییز ۱۴۰۵-۱۴۰۶: index.md
+  - ترم قبلی: 1404-1405-xxx.md
+```
+
+اگر ترم جدید متعلق به یک نیم‌سال تحصیلی دیگر است، فیلدهای `term_fa`/`term_en` مربوط به آن درس را در `courses/index.json` هم به‌روزرسانی کنید تا کارت‌های صفحه‌ی اصلی زیر عنوان ترم درست گروه‌بندی شوند.
+
+## افزودن یک درس کاملاً جدید
+
+۱. یکی از پوشه‌های `docs-src/<id>/` را کپی کنید، نام پوشه، `site_name`/`site_description`/`site_dir` در `mkdocs.yml` و محتوای `docs/index.md` را عوض کنید.
+۲. یک رکورد جدید (با `term_fa`/`term_en`) به `courses/index.json` اضافه کنید — صفحه‌ی اصلی خودش کارت جدید را نشان می‌دهد.
+
+## Build نهایی برای انتشار
+
+```bash
+cd docs-src/<id>
+mkdocs build
+```
+
+خروجی مستقیم در `courses/<id>/` نوشته می‌شود (پوشه‌ی مقصد قبل از build پاک‌سازی می‌شود) و باید commit شود.

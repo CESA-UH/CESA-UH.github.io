@@ -28,7 +28,6 @@ theme:
   features:
     - navigation.sections
     - navigation.top
-    - navigation.indexes
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -47,12 +46,6 @@ markdown_extensions:
   - pymdownx.superfences
 
 nav:
-  - خانه: index.md
-  - پاییز ۱۴۰۵-۱۴۰۶:
-      - برنامه زمانی: 1405-1406-paeez/schedule.md
-      - ویدیوها: 1405-1406-paeez/videos.md
-      - جزوه و کتاب: 1405-1406-paeez/notes.md
-      - تمارین: 1405-1406-paeez/exercises.md
-      - کدها: 1405-1406-paeez/code.md
+  - پاییز ۱۴۰۵-۱۴۰۶: index.md
 
 copyright: دانشگاه هرمزگان — دانشکده مهندسی کامپیوتر

@@ -1,7 +1,5 @@
-# طراحی الگوریتم‌ها
+# پاییز ۱۴۰۵-۱۴۰۶
 
-ویدیوها، جزوات، تمارین و کدهای درس طراحی الگوریتم‌ها — دانشکده مهندسی کامپیوتر دانشگاه هرمزگان.
-
-## ترم جاری
-
-- [پاییز ۱۴۰۵-۱۴۰۶](1405-1406-paeez/schedule.md)
+| جلسه | عنوان | تاریخ | ویدئو | اسلاید | جزوه | تمرین | کد |
+|---:|---|---|---|---|---|---|---|
+| ۱ | مقدمه و مرور | ۱ مهر | [مشاهده](1405-1406-paeez/assets/videos/session1.mp4){ target="_blank" rel="noopener noreferrer" } | [اسلاید](1405-1406-paeez/assets/slides/s1.pdf){ target="_blank" rel="noopener noreferrer" } | [جزوه](1405-1406-paeez/assets/notes/ch1.pdf){ target="_blank" rel="noopener noreferrer" } | [تمرین](1405-1406-paeez/assets/exercises/hw1.pdf){ target="_blank" rel="noopener noreferrer" } | [کد](https://github.com/...){ target="_blank" rel="noopener noreferrer" } |
