@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  var lang = localStorage.getItem("ece-docs-lang") || "fa";
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+  document.documentElement.dataset.theme = localStorage.getItem("ece-docs-theme") || "light";
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-fa="ساختمان داده‌ها | مستندات مهندسی کامپیوتر هرمزگان" data-en="Data Structures | Hormozgan ECE Docs">ساختمان داده‌ها</title>
+<link rel="icon" href="../../assets/img/logo-navy.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../index.html">
+      <img src="../../assets/img/logo-white.png" alt="Hormozgan University logo">
+      <span data-fa="دانشکده مهندسی کامپیوتر" data-en="Faculty of Computer Engineering">دانشکده مهندسی کامپیوتر</span>
+    </a>
+    <nav class="main-nav">
+      <a href="../../index.html" data-fa="خانه" data-en="Home">خانه</a>
+      <a href="../../index.html#courses" data-fa="دروس" data-en="Courses">دروس</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="تغییر پوسته">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <button class="lang-toggle" type="button">EN</button>
+    </div>
+  </div>
+</header>
+
+<div class="docs-shell container">
+  <aside class="docs-sidebar">
+    <nav id="docs-sidebar-nav" class="docs-sidebar-nav">
+      <div class="sidebar-group">
+        <h4 data-fa="دروس" data-en="Courses">دروس</h4>
+        <ul class="sidebar-course-list"></ul>
+      </div>
+      <div class="sidebar-group">
+        <h4 data-fa="این درس" data-en="On this page">این درس</h4>
+        <ul class="sidebar-page-nav">
+          <li><a href="#schedule-section" data-fa="برنامه زمانی" data-en="Schedule">برنامه زمانی</a></li>
+          <li><a href="#videos-section" data-fa="ویدیوها" data-en="Videos">ویدیوها</a></li>
+          <li><a href="#notes-section" data-fa="جزوه و کتاب" data-en="Notes &amp; Books">جزوه و کتاب</a></li>
+          <li><a href="#exercises-section" data-fa="تمارین" data-en="Exercises">تمارین</a></li>
+          <li><a href="#code-section" data-fa="کدها" data-en="Code">کدها</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="docs-content">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="../../index.html" data-fa="خانه" data-en="Home">خانه</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#courses" data-fa="دروس" data-en="Courses">دروس</a>
+      <span class="sep">/</span>
+      <span data-fa="ساختمان داده‌ها" data-en="Data Structures">ساختمان داده‌ها</span>
+    </nav>
+
+    <section class="course-header">
+      <h1 data-fa="ساختمان داده‌ها" data-en="Data Structures">ساختمان داده‌ها</h1>
+    </section>
+
+    <section id="schedule-section" class="section reveal">
+      <h2 data-fa="برنامه زمانی" data-en="Schedule">برنامه زمانی</h2>
+      <div id="schedule-section-body"></div>
+    </section>
+
+    <section id="videos-section" class="section reveal">
+      <h2 data-fa="ویدیوها" data-en="Videos">ویدیوها</h2>
+      <div id="video-section-body"></div>
+    </section>
+
+    <section id="notes-section" class="section reveal">
+      <h2 data-fa="جزوه و کتاب" data-en="Notes &amp; Books">جزوه و کتاب</h2>
+      <div id="notes-section-body"></div>
+    </section>
+
+    <section id="exercises-section" class="section reveal">
+      <h2 data-fa="تمارین" data-en="Exercises">تمارین</h2>
+      <div id="exercises-section-body"></div>
+    </section>
+
+    <section id="code-section" class="section reveal">
+      <h2 data-fa="کدها" data-en="Code">کدها</h2>
+      <div id="code-section-body"></div>
+    </section>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span data-fa="دانشگاه هرمزگان — دانشکده مهندسی کامپیوتر" data-en="University of Hormozgan — Faculty of Computer Engineering">دانشگاه هرمزگان — دانشکده مهندسی کامپیوتر</span>
+  </div>
+</footer>
+
+<script src="../../assets/js/jalali.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+<script src="../../assets/js/course.js" defer></script>
+</body>
+</html>

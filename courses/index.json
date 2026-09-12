@@ -1,0 +1,23 @@
+[
+  {
+    "id": "Algo",
+    "title_fa": "طراحی الگوریتم‌ها",
+    "title_en": "Algorithm Design",
+    "desc_fa": "ویدیوها، جزوات، تمارین و کدهای درس طراحی الگوریتم‌ها",
+    "desc_en": "Videos, notes, exercises, and code for Algorithm Design"
+  },
+  {
+    "id": "CI",
+    "title_fa": "هوش محاسباتی",
+    "title_en": "Computational Intelligence",
+    "desc_fa": "ویدیوها، جزوات، تمارین و کدهای درس هوش محاسباتی",
+    "desc_en": "Videos, notes, exercises, and code for Computational Intelligence"
+  },
+  {
+    "id": "DS",
+    "title_fa": "ساختمان داده‌ها",
+    "title_en": "Data Structures",
+    "desc_fa": "ویدیوها، جزوات، تمارین و کدهای درس ساختمان داده‌ها",
+    "desc_en": "Videos, notes, exercises, and code for Data Structures"
+  }
+]

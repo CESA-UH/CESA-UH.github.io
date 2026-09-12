@@ -1,0 +1,15 @@
+{
+  "schedule": [
+    {
+      "date": "2026-09-23",
+      "title_fa": "مقدمه و مرور",
+      "title_en": "Introduction & Review",
+      "materials": [{ "title_fa": "اسلاید", "title_en": "Slides", "href": "slides/s1.pdf" }],
+      "homework": { "title_fa": "تمرین ۱", "title_en": "Exercise 1", "href": "exercises/hw1.pdf" }
+    }
+  ],
+  "videos": [{ "title_fa": "جلسه ۱", "title_en": "Session 1", "src": "videos/session1.mp4" }],
+  "notes": [{ "title_fa": "جزوه فصل ۱", "title_en": "Chapter 1 notes", "href": "notes/ch1.pdf" }],
+  "exercises": [{ "title_fa": "تمرین ۱", "title_en": "Exercise 1", "href": "exercises/hw1.pdf" }],
+  "code": [{ "title_fa": "کد جلسه ۱", "title_en": "Session 1 code", "href": "https://github.com/..." }]
+}
