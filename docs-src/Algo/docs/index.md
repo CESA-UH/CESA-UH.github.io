@@ -8,7 +8,7 @@
 
 **مراجع درس**:
 
-- طراحی الگوریتم‌ها، محمدرضا قدسی
-- Algorithm Design، Jon Kleinberg و Éva Tardos
+- طراحی الگوریتم‌ها، محمد قدسی
 - طراحی الگوریتم، انتشارات پوران پژوهش
+- Algorithm Design، Jon Kleinberg و Éva Tardos
 - Introduction to Algorithms، Cormen, Leiserson, Rivest, Stein (CLRS)
