@@ -1,15 +1,18 @@
 **«طراحی الگوریتم» - پاییز ۱۴۰۵**
 
+**استاد:** دکتر شهرام گلزاری
+
 #### برنامه جلسات
 
-| جلسه | عنوان | تاریخ | اسلاید | منابع پیشنهادی | تمرین‌های پیش از کلاس |
-| ---: | ---- | ---- | ---- | ---- | ---- |
-| ۱ | مقدمه | ۲۱ شهریور ۱۴۰۵ | [اسلاید‌های جلسه اول](1405-1406-paeez/assets/slides/s1.pdf){ target="_blank" rel="noopener noreferrer" } |  | [تمرین جلسه اول](1405-1406-paeez/assets/exercises/hw1.pdf){ target="_blank" rel="noopener noreferrer" } |
-| ۱ | مقدمه | ۲۴ شهریور ۱۴۰۵ | [اسلاید‌های جلسه دوم](1405-1406-paeez/assets/slides/s1.pdf){ target="_blank" rel="noopener noreferrer" } |  | [تمرین جلسه دوم](1405-1406-paeez/assets/exercises/t1.pdf){ target="_blank" rel="noopener noreferrer" } |
-| ۱ | مقدمه | ۲۹ شهریور ۱۴۰۵ | [اسلاید‌های جلسه سوم](1405-1406-paeez/assets/slides/s3.pdf){ target="_blank" rel="noopener noreferrer" } |  | [تمرین جلسه سوم](1405-1406-paeez/assets/exercises/t1.pdf){ target="_blank" rel="noopener noreferrer" } |
+| جلسه | عنوان   | تاریخ          | اسلاید                                                                         | منابع پیشنهادی | تمرین‌های پیش از کلاس                                                          |
+| ---: | ------- | -------------- | ------------------------------------------------------------------------------ | :------------: | ------------------------------------------------------------------------------ |
+|    ۱ | مقدمه   | ۲۱ شهریور ۱۴۰۵ | [اسلایدهای جلسه اول](1405-1406-paeez/assets/slides/s1.pdf)                      |        -       | [تمرین جلسه اول](1405-1406-paeez/assets/exercises/hw1.pdf)                    |
+|    ۲ | مقدمه   | ۲۴ شهریور ۱۴۰۵ | [اسلایدهای جلسه دوم](1405-1406-paeez/assets/slides/s1.pdf)                      |        -       | [تمرین جلسه دوم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
+|    ۳ | مقدمه   | ۲۹ شهریور ۱۴۰۵ | [اسلایدهای جلسه سوم](1405-1406-paeez/assets/slides/s3.pdf)                      |        -       | [تمرین جلسه سوم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
+
 **مراجع درس**:
 
-- قدسی, محمد (۱۴۰۱) مبانی طراحی و تبدیل الگوریتم‌ها
-- یوسفی, هادی (۱۴۰۵) طراحی الگوریتم
-- Jon Kleinberg, Éva Tardos Algorithm Design
-- Cormen, Leiserson, Rivest, Stein Introduction to Algorithms(CLRS)
+- قدسی، محمد. (۱۴۰۱). _مبانی طراحی و تحلیل الگوریتم‌ها_. انتشارات فاطمی.
+- یوسفی، هادی. (۱۴۰۵). _طراحی الگوریتم_. انتشارات پوران پژوهش.
+- Kleinberg, J., & Tardos, É. (2006). *Algorithm Design*. Pearson.
+- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). *Introduction to Algorithms* (4th ed.). The MIT Press.
