@@ -13,6 +13,5 @@
 **مراجع درس**:
 
 - قدسی، محمد. (۱۴۰۱). _مبانی طراحی و تحلیل الگوریتم‌ها_. انتشارات فاطمی.
-- یوسفی، هادی. (۱۴۰۵). _طراحی الگوریتم_. انتشارات پوران پژوهش.
 - Kleinberg, J., & Tardos, É. (2006). *Algorithm Design*. Pearson.
 - Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). *Introduction to Algorithms* (4th ed.). The MIT Press.
