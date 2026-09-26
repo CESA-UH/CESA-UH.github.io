@@ -9,7 +9,8 @@
 |    ۱ | مقدمه   | ۲۱ شهریور ۱۴۰۵ | [اسلایدهای جلسه اول](1405-1406-paeez/assets/slides/s1.pdf)                      |        -       | [تمرین جلسه اول](1405-1406-paeez/assets/exercises/hw1.pdf)                    |
 |    ۲ | مقدمه   | ۲۴ شهریور ۱۴۰۵ | [اسلایدهای جلسه دوم](1405-1406-paeez/assets/slides/s1.pdf)                      |        -       | [تمرین جلسه دوم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
 |    ۳ | استقرا   | ۲۹ شهریور ۱۴۰۵ | [اسلایدهای جلسه سوم](1405-1406-paeez/assets/slides/s3.pdf)                      |        Celebrity Problem(قدسی)       | [تمرین جلسه سوم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
-|    ۴ | تقسیم و حل   | ۲۹ شهریور ۱۴۰۵ | [اسلایدهای جلسه چهارم](1405-1406-paeez/assets/slides/s4.pdf)                      |        -       | [تمرین جلسه چهارم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
+|    ۴ | تقسیم و حل   | ۳۱ شهریور ۱۴۰۵ | [اسلایدهای جلسه چهارم](1405-1406-paeez/assets/slides/s4.pdf)                      |        -       | [تمرین جلسه چهارم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
+|    ۵ | II تقسیم و حل   | ۵ مهر ۱۴۰۵ | [اسلایدهای جلسه پنجم](1405-1406-paeez/assets/slides/s4.pdf)                      |        -       | [تمرین جلسه پنجم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
 **مراجع درس**:
 
 - قدسی، محمد. (۱۴۰۱). _مبانی طراحی و تحلیل الگوریتم‌ها_. انتشارات فاطمی.
