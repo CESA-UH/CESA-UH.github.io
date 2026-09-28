@@ -1,18 +1,9 @@
+# **«داده‌ساختارها و الگوریتم‌ها» - پاییز ۱۴۰۵**
+### **استاد:** دکتر شهرام گلزاری
 
-**«داده‌ساختار و الگوریتم‌ها» - پاییز ۱۴۰۵**
+--8<-- "docs/1405-1406-paeez/class-sessions.md"
+---
 
-**استاد:** دکتر شهرام گلزاری
-
-#### برنامه جلسات
-
-| جلسه | عنوان                                                      | تاریخ          | اسلاید                                                                                                                                                             | منابع پیشنهادی                                                                 | تمرین‌های پیش از کلاس                                                                                                                        |
-| ---: | ---------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-|    ۱ | معرفی درس و انتزاع                                         | ۲۲ شهریور ۱۴۰۵ | اسلاید‌های جلسه اول                                                                                                                                                | فصل اول کتاب دکتر قدسی                                                         | تمرین جلسه اول                                                                                                                               |
-|    ۲ | تحلیل زمانی الگوریتم‌ها: مرتب‌سازی درجی                    | ۲۴ شهریور ۱۴۰۵ | اسلایدهای جلسه دوم                                                                                                                                                 | فصل سوم کتاب دکتر قدسی صفحات ۵۵-۶۵ (تا قبل از عنوان پیچیدگی الگوریتم‌ها)       | تمرینات جلسه دوم                                                                                                                             |
-|    ۳ | پیچیدگی الگوریتم‌ها و نماد‌های مجانبی                      | ۲۹ شهریور ۱۴۰۵ | [اسلایدهای جلسه سوم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/slides/3-AsymptoticAnalysis.pdf)              | فصل سوم کتاب دکتر قدسی صفحات ۶۵-۷۹ (تا قبل از عنوان روش‌های تحلیل الگوریتم‌ها) | [تمرینات جلسه سوم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/exercises/WarmUP-3.pdf)   |
-|    ۴ | تحلیل الگوریتم‌های ترتیبی و مقدمه‌ای بر تقسیم و حل         | ۳۱ شهریور ۱۴۰۵ | [اسلایدهای جلسه چهارم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/slides/4-SequentialAlgorithmsAnalysis.pdf)  | فصل سوم کتاب دکتر قدسی صفحات ۷۹-۹۳                                             | [تمرینات جلسه چهارم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/exercises/WarmUP-4.pdf) |
-|    ۵ | تقسیم و حل - مقدمه                                         | ۵ مهر ۱۴۰۵     | [اسلایدهای جلسه پنجم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/slides/5-DivideAndConquer(Introduction).pdf) | فصل سوم کتاب دکتر قدسی صفحات ۸۴-۹۳                                             | [تمرینات جلسه پنجم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/exercises/WarmUP-5.pdf)  |
-|    ۶ | تقسیم و حل - مرتب‌سازی ادغامی و تحلیل الگوریتم‌های بازگشتی | ۷ مهر ۱۴۰۵     | [اسلایدهای جلسه ششم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/slides/6-MergeSort.pdf)                       | فصل سوم کتاب دکتر قدسی صفحات ۹۳-۸۹                                             | [تمرینات جلسه ششم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/exercises/WarmUP-6.pdf)   |
 
 
 **مراجع درس**:

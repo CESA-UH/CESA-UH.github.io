@@ -131,3 +131,12 @@ body,
   background: rgba(47, 111, 224, 0.12);
   color: var(--md-typeset-a-color);
 }
+
+.md-typeset details {
+  font-size: 0.8rem;
+}
+
+.md-typeset details summary {
+  font-size: 0.9rem;
+  font-weight: 600;
+}

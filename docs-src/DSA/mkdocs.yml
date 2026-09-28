@@ -1,5 +1,5 @@
-site_name: داده‌ساختارها و الگوریتم
-site_description: ویدیوها، جزوات، تمارین و کدهای درس داده‌ساختارها و الگوریتم
+site_name: داده‌ساختارها و الگوریتم‌ها
+site_description: ویدیوها، جزوات، تمارین و کدهای درس داده‌ساختارها و الگوریتم‌ها
 site_dir: ../../courses/DSA
 docs_dir: docs
 use_directory_urls: true
@@ -54,14 +54,15 @@ markdown_extensions:
 
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.snippets
 
   - pymdownx.arithmatex:
       generic: true
 
 nav:
   - پاییز ۱۴۰۵-۱۴۰۶:
-      - جلسات درس: index.md
-
+      - صفحه اصلی: index.md
+      ##- جلسات درس: 1405-1406-paeez/class-sessions.md
       - کلاس‌های حل تمرین:
           - حل تمرین تئوری: 1405-1406-paeez/problem-solving/theory.md
           - حل تمرین برنامه‌نویسی: 1405-1406-paeez/problem-solving/programming.md

@@ -25,3 +25,29 @@ document.addEventListener("DOMContentLoaded", () => {
       button.setAttribute("aria-expanded", String(!collapsed));
     });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const isHomePage =
+      window.location.pathname === "/" ||
+      window.location.pathname.endsWith("/index.html");
+  
+    if (!isHomePage) return;
+  
+    const tables = document.querySelectorAll("table");
+  
+    if (!tables.length) return;
+  
+    const table = tables[tables.length - 1];
+    const rows = table.querySelectorAll("tbody tr");
+  
+    if (!rows.length) return;
+  
+    const lastRow = rows[rows.length - 1];
+  
+    setTimeout(() => {
+      lastRow.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }, 900);
+  });
