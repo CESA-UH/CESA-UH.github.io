@@ -1,0 +1,1160 @@
+
+<!doctype html>
+<html lang="fa" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ویدیوها، جزوات، تمارین و کدهای درس داده‌ساختارها و الگوریتم">
+      
+      
+      
+      
+        <link rel="prev" href="../../theory/exercise-01/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/logo-navy.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>تمرین سری اول - داده‌ساختارها و الگوریتم</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="rtl" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          پرش به محتویات
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="سرتیتر">
+    <a href="../../../.." title="داده‌ساختارها و الگوریتم" class="md-header__button md-logo" aria-label="داده‌ساختارها و الگوریتم" data-md-component="logo">
+      
+  <img src="../../../../assets/logo-navy.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            داده‌ساختارها و الگوریتم
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              تمرین سری اول
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="تغییر به حالت تاریک"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="تغییر به حالت تاریک" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="تغییر به حالت روشن"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="تغییر به حالت روشن" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="جستجو" placeholder="جستجو" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="جستجو">
+        
+        <button type="reset" class="md-search__icon md-icon" title="بازنشانی" aria-label="بازنشانی" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            راه‌اندازی جستجو
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="هدایت" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="داده‌ساختارها و الگوریتم" class="md-nav__button md-logo" aria-label="داده‌ساختارها و الگوریتم" data-md-component="logo">
+      
+  <img src="../../../../assets/logo-navy.png" alt="logo">
+
+    </a>
+    داده‌ساختارها و الگوریتم
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پاییز ۱۴۰۵-۱۴۰۶
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    پاییز ۱۴۰۵-۱۴۰۶
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    جلسات درس
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    کلاس‌های حل تمرین
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    کلاس‌های حل تمرین
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem-solving/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    حل تمرین تئوری
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem-solving/programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    حل تمرین برنامه‌نویسی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرینات
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    تمرینات
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/exercise-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرینات تئوری
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_2" id="__nav_1_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرینات برنامه‌نویسی
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    تمرینات برنامه‌نویسی
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرین سری اول
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرین سری اول
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۱ — بزرگ‌ترین مستطیل در هیستوگرام
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۲ — معکوس کردن حروف هر کلمه
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۳ — آرایه‌ی تعادل
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۴ — وارونگی
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۵ — سکه‌های سزار
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۱ — بزرگ‌ترین مستطیل در هیستوگرام
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۲ — معکوس کردن حروف هر کلمه
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۳ — آرایه‌ی تعادل
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۴ — وارونگی
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۵ — سکه‌های سزار
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">تمرین سری عملی ۱<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="_2">سؤال ۱ — بزرگ‌ترین مستطیل در هیستوگرام<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>نوع سؤال:</strong></p>
+<p><strong>محدودیت زمان:</strong> ۱ ثانیه<br />
+<strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
+<p>یک آرایه از اعداد صحیح <code>heights</code> داریم که ارتفاع میله‌های یک هیستوگرام را نشان می‌دهد؛ به‌طوری که عرض هر میله برابر با ۱ است.</p>
+<p>الگوریتمی ارائه دهید که <strong>بزرگ‌ترین مساحت مستطیل</strong> موجود در هیستوگرام را پیدا کند.</p>
+<p>برای مثال، اگر آرایه‌ی ارتفاع‌ها به صورت زیر باشد:</p>
+<div class="arithmatex">\[
+heights = [2,1,5,6,2,3]
+\]</div>
+<p>بزرگ‌ترین مستطیل قابل تشکیل، مستطیلی با ارتفاع <span class="arithmatex">\(5\)</span> و عرض <span class="arithmatex">\(2\)</span> است که روی میله‌های با ارتفاع <span class="arithmatex">\(5\)</span> و <span class="arithmatex">\(6\)</span> قرار می‌گیرد.</p>
+<p>بنابراین مساحت این مستطیل برابر است با:</p>
+<div class="arithmatex">\[
+5 \times 2 = 10
+\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="نمونه‌ای از بزرگ‌ترین مستطیل قابل تشکیل در یک هیستوگرام" src="https://cdn.imgurl.ir/uploads/t111774_1fd08356-4529-4dfa-b3d9-1c96619b7b93.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><em>نمونه‌ای از بزرگ‌ترین مستطیل قابل تشکیل در یک هیستوگرام</em></td>
+</tr>
+</tbody>
+</table>
+<p>همان‌طور که در شکل مشاهده می‌شود، این مستطیل بزرگ‌ترین مستطیل قابل تشکیل در هیستوگرام است.</p>
+<h3 id="_3">ورودی<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>ورودی شامل یک خط است که در آن <span class="arithmatex">\(n\)</span> عدد صحیح با فاصله از یکدیگر آمده است. عدد <span class="arithmatex">\(i\)</span>-ام، ارتفاع میله‌ی <span class="arithmatex">\(i\)</span>-ام هیستوگرام را مشخص می‌کند.</p>
+<div class="arithmatex">\[
+1 \le n \le 2\times10^5
+\]</div>
+<div class="arithmatex">\[
+1 \le heights_i \le 10^9
+\]</div>
+<h3 id="_4">خروجی<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>در تنها خط خروجی، بزرگ‌ترین مساحت مستطیلی را که می‌توان درون هیستوگرام تشکیل داد، چاپ کنید.</p>
+<h3 id="_5">مثال<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="_6">ورودی نمونه ۱<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>2 1 5 6 2 3
+</code></pre></div>
+<h4 id="_7">خروجی نمونه ۱<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>10
+</code></pre></div>
+<p>در این مثال، مستطیلی با ارتفاع <span class="arithmatex">\(5\)</span> و عرض <span class="arithmatex">\(2\)</span> می‌توان روی میله‌های سوم و چهارم قرار داد. بنابراین مساحت آن برابر است با:</p>
+<div class="arithmatex">\[
+5 \times 2 = 10
+\]</div>
+<h4 id="_8">ورودی نمونه ۲<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>2
+</code></pre></div>
+<h4 id="_9">خروجی نمونه ۲<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>2
+</code></pre></div>
+<p>در این حالت تنها یک میله وجود دارد و بزرگ‌ترین مستطیل دارای ارتفاع <span class="arithmatex">\(2\)</span> و عرض <span class="arithmatex">\(1\)</span> است. بنابراین:</p>
+<div class="arithmatex">\[
+2 \times 1 = 2
+\]</div>
+<h4 id="_10">ورودی نمونه ۳<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>2 2 2 2
+</code></pre></div>
+<h4 id="_11">خروجی نمونه ۳<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>8
+</code></pre></div>
+<p>در این مثال می‌توان هر چهار میله را در یک مستطیل با ارتفاع <span class="arithmatex">\(2\)</span> قرار داد. بنابراین:</p>
+<div class="arithmatex">\[
+2 \times 4 = 8
+\]</div>
+<details class="success">
+<summary>مشاهده پاسخ</summary>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+</details>
+<hr />
+<h2 id="_12">سؤال ۲ — معکوس کردن حروف هر کلمه<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p><strong>نوع سؤال:</strong></p>
+<p><strong>محدودیت زمان:</strong> ۱ ثانیه<br />
+<strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
+<p>یک رشته شامل چند کلمه‌ی انگلیسی به شما داده می‌شود، کلمات با فاصله از یکدیگر جدا شده‌اند.</p>
+<p>برنامه‌ای بنویسید که ترتیب حروف هر کلمه را برعکس کند، ولی ترتیب خود کلمات تغییر نکند.</p>
+<h3 id="_13">ورودی<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>در تنها خط ورودی، یک رشته شامل چند کلمه‌ی انگلیسی داده می‌شود. کلمات با یک فاصله از یکدیگر جدا شده‌اند.</p>
+<h3 id="_14">خروجی<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>در تنها خط خروجی، رشته‌ی ورودی را به‌گونه‌ای چاپ کنید که حروف هر کلمه از آخر به اول نوشته شوند، اما ترتیب قرارگیری کلمات نسبت به یکدیگر تغییر نکند.</p>
+<h3 id="_15">مثال<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h4 id="_16">ورودی نمونه ۱<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>Hello World
+</code></pre></div>
+<h4 id="_17">خروجی نمونه ۱<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>olleH dlroW
+</code></pre></div>
+<h4 id="_18">ورودی نمونه ۲<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>I love programming
+</code></pre></div>
+<h4 id="_19">خروجی نمونه ۲<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>I evol gnimmargorp
+</code></pre></div>
+<details class="success">
+<summary>مشاهده پاسخ</summary>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+</details>
+<hr />
+<h2 id="_20">سؤال ۳ — آرایه‌ی تعادل<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p><strong>نوع سؤال:</strong></p>
+<p><strong>محدودیت زمان:</strong> ۱ ثانیه<br />
+<strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
+<p>یک آرایه‌ی <span class="arithmatex">\(A\)</span> شامل <span class="arithmatex">\(n\)</span> عدد صحیح به شما داده می‌شود.</p>
+<p>می‌خواهیم بدانیم آیا می‌توان <strong>دقیقاً یک عنصر</strong> از آرایه را حذف کرد، به‌طوری که مجموع عناصر سمت چپ و سمت راست محل حذف برابر شوند یا خیر.</p>
+<p>اگر چنین عنصری وجود داشته باشد، <strong>اولین اندیس ممکن</strong> را چاپ کنید. اندیس‌های آرایه از ۱ شروع می‌شوند.</p>
+<p>توجه کنید عنصری که حذف می‌شود، در هیچ‌کدام از دو طرف قرار نمی‌گیرد.</p>
+<h3 id="_21">ورودی<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>در خط اول، عدد صحیح <span class="arithmatex">\(n\)</span> داده می‌شود.</p>
+<p>در خط دوم، <span class="arithmatex">\(n\)</span> عدد صحیح <span class="arithmatex">\(A_1, A_2, \dots, A_n\)</span> داده می‌شود که عناصر آرایه را تشکیل می‌دهند.</p>
+<div class="arithmatex">\[
+1 \le n \le 10^5
+\]</div>
+<div class="arithmatex">\[
+|A_i| \le 10^9
+\]</div>
+<h3 id="_22">خروجی<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>در تنها خط خروجی، اولین اندیسی را چاپ کنید که با حذف عنصر موجود در آن، مجموع عناصر سمت چپ و راست برابر شود.</p>
+<p>اگر چنین اندیسی وجود نداشت، مقدار <code>-1</code> را چاپ کنید.</p>
+<h3 id="_23">مثال<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<h4 id="_24">ورودی نمونه ۱<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>6
+1 2 3 0 3 3
+</code></pre></div>
+<h4 id="_25">خروجی نمونه ۱<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>4
+</code></pre></div>
+<p>با حذف عنصر موجود در اندیس ۴، آرایه به دو بخش تقسیم می‌شود:</p>
+<div class="arithmatex">\[
+1 + 2 + 3 = 3 + 3
+\]</div>
+<p>بنابراین مجموع عناصر سمت چپ و راست برابر است و پاسخ <code>4</code> خواهد بود.</p>
+<h4 id="_26">ورودی نمونه ۲<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>5
+1 2 3 4 5
+</code></pre></div>
+<h4 id="_27">خروجی نمونه ۲<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>-1
+</code></pre></div>
+<p>هیچ عنصری وجود ندارد که با حذف آن، مجموع عناصر سمت چپ و راست برابر شوند.</p>
+<h4 id="_28">ورودی نمونه ۳<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>3
+2 0 2
+</code></pre></div>
+<h4 id="_29">خروجی نمونه ۳<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>2
+</code></pre></div>
+<p>با حذف عنصر اندیس ۲، داریم:</p>
+<div class="arithmatex">\[
+2 = 2
+\]</div>
+<p>پس اندیس <code>2</code> پاسخ است.</p>
+<h4 id="_30">ورودی نمونه ۴<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1
+10
+</code></pre></div>
+<h4 id="_31">خروجی نمونه ۴<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1
+</code></pre></div>
+<p>با حذف تنها عنصر آرایه، هر دو سمت خالی هستند و مجموع هر دو طرف برابر با صفر است.</p>
+<details class="success">
+<summary>مشاهده پاسخ</summary>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+</details>
+<hr />
+<h2 id="_32">سؤال ۴ — وارونگی<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<p><strong>نوع سؤال:</strong></p>
+<p><strong>محدودیت زمان:</strong> ۳ ثانیه<br />
+<strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
+<p>آرایه‌ی <span class="arithmatex">\(A\)</span> شامل <span class="arithmatex">\(n\)</span> عدد متمایز به شما داده شده است. در این مسئله هدف شما پیدا کردن <strong>تعداد وارونگی‌های</strong> موجود در آرایه است.</p>
+<p>یک <strong>وارونگی (Inversion)</strong> در آرایه، یک جفت اندیس <span class="arithmatex">\((i,j)\)</span> است که شرایط زیر را داشته باشد:</p>
+<div class="arithmatex">\[
+i &lt; j \quad \text{و} \quad A[i] &gt; A[j]
+\]</div>
+<p>به بیان ساده، هرگاه یک عنصر بزرگ‌تر قبل از یک عنصر کوچک‌تر در آرایه قرار گرفته باشد، یک وارونگی تشکیل می‌شود.</p>
+<p>برای مثال، در آرایه‌ی زیر:</p>
+<div class="arithmatex">\[
+A = [3,1,2]
+\]</div>
+<p>دو وارونگی وجود دارد:</p>
+<div class="arithmatex">\[
+(3,1),\quad (3,2)
+\]</div>
+<p>بنابراین تعداد وارونگی‌های این آرایه برابر با <span class="arithmatex">\(2\)</span> است.</p>
+<p>حال برنامه‌ای بنویسید که با دریافت آرایه‌ی <span class="arithmatex">\(A\)</span>، تعداد وارونگی‌های موجود در آن را محاسبه و چاپ کند.</p>
+<h3 id="_33">ورودی<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<p>در خط اول ورودی، عدد طبیعی <span class="arithmatex">\(n\)</span>، تعداد عناصر، داده می‌شود.</p>
+<p>در خط دوم، <span class="arithmatex">\(n\)</span> عدد صحیح متمایز، عناصر آرایه‌ی <span class="arithmatex">\(A\)</span>، با فاصله از یکدیگر داده می‌شوند.</p>
+<div class="arithmatex">\[
+1 \le n \le 2 \times 10^5
+\]</div>
+<div class="arithmatex">\[
+-10^9 \le A[i] \le 10^9
+\]</div>
+<p>تضمین می‌شود که تمام عناصر آرایه متمایز هستند.</p>
+<h3 id="_34">خروجی<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<p>در تنها خط خروجی، تعداد وارونگی‌های موجود در آرایه را چاپ کنید.</p>
+<p>توجه کنید که پاسخ ممکن است بزرگ باشد؛ بنابراین باید از نوع داده‌ای مناسب برای ذخیره‌ی آن استفاده کنید.</p>
+<h3 id="_35">مثال<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
+<h4 id="_36">ورودی نمونه ۱<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>5
+1 2 3 4 5
+</code></pre></div>
+<h4 id="_37">خروجی نمونه ۱<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>0
+</code></pre></div>
+<p>آرایه به صورت صعودی مرتب شده است؛ بنابراین هیچ وارونگی‌ای در آن وجود ندارد.</p>
+<h4 id="_38">ورودی نمونه ۲<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>5
+5 4 3 2 1
+</code></pre></div>
+<h4 id="_39">خروجی نمونه ۲<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>10
+</code></pre></div>
+<h4 id="_40">ورودی نمونه ۳<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>5
+2 4 1 3 5
+</code></pre></div>
+<h4 id="_41">خروجی نمونه ۳<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>3
+</code></pre></div>
+<p>وارونگی‌های موجود عبارت‌اند از:</p>
+<div class="arithmatex">\[
+(2,1),\quad (4,1),\quad (4,3)
+\]</div>
+<p>در نتیجه تعداد وارونگی‌ها برابر با <span class="arithmatex">\(3\)</span> است.</p>
+<h4 id="_42">ورودی نمونه ۴<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>6
+6 5 4 3 2 1
+</code></pre></div>
+<h4 id="_43">خروجی نمونه ۴<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>15
+</code></pre></div>
+<details class="success">
+<summary>مشاهده پاسخ</summary>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+</details>
+<hr />
+<h2 id="_44">سؤال ۵ — سکه‌های سزار<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h2>
+<p><strong>نوع سؤال:</strong></p>
+<p><strong>محدودیت زمان:</strong> ۳ ثانیه<br />
+<strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
+<p>گایوس ژولیوس سزار برای حمله به گالیا به کمک شما نیاز دارد. او قصد دارد تا با خرج کردن کمترین میزان پول، جنگ را پیروز شود. او که می‌داند شما خیلی از ساز و کار جنگ سر در نمی‌آورید، مسئله را برای شما این‌گونه ساده کرده است.</p>
+<p>او در کل <span class="arithmatex">\(n\)</span> سرباز دارد که قدرت هر کدام را با <span class="arithmatex">\(a_i\)</span> نشان می‌دهیم. همچنین <span class="arithmatex">\(m\)</span> دشمن وجود دارد که باید شکست داده شوند. قدرت حمله و قدرت دفاع هر یک از دشمنان را با <span class="arithmatex">\(e_{ai}\)</span> و <span class="arithmatex">\(e_{di}\)</span> نشان می‌دهیم.</p>
+<p>شما باید از بین سربازهای سزار، سربازی را برای شکست دادن سرباز حریف انتخاب کنید. شرط اینکه سرباز انتخاب‌شده بتواند دشمن را شکست دهد این است که قدرت حمله‌اش از قدرت دفاع سرباز حریف بیشتر یا مساوی باشد.</p>
+<p>همچنین برای احتیاط لازم است مجموع قدرت سربازهای باقی‌مانده، بیشتر یا مساوی قدرت حمله‌ی دشمن باشد.</p>
+<p>شما می‌توانید با خرج کردن یک سکه، قدرت هر کدام از سربازهایتان را یک واحد افزایش دهید.</p>
+<p>سزار از شما می‌خواهد که کمترین میزان سکه‌ای که برای شکست دادن هر دشمن باید خرج کند را به او بگویید.</p>
+<h3 id="_45">ورودی<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
+<p>در خط اول ورودی تعداد سربازان سزار، <span class="arithmatex">\(n\)</span>، می‌آید.</p>
+<p>در خط دوم قدرت هر یک از سربازان با فاصله می‌آید. قدرت سربازان از کوچک به بزرگ مرتب شده است.</p>
+<p>در خط سوم تعداد دشمنان، <span class="arithmatex">\(m\)</span>، می‌آید و در خط بعدی به ترتیب قدرت دفاع و حمله‌ی هر یک از دشمنان می‌آید.</p>
+<p>محدودیت‌ها:</p>
+<div class="arithmatex">\[
+1 \le n,m,a_i \le 2\times10^5
+\]</div>
+<div class="arithmatex">\[
+1 \le e_{ai},e_{di} \le 10^{12}
+\]</div>
+<h3 id="_46">خروجی<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h3>
+<p>به ترتیب در <span class="arithmatex">\(m\)</span> خط، برای هر دشمن کمترین میزان سکه‌ای که سزار باید خرج کند را چاپ کنید.</p>
+<p>توجه کنید که هر دشمن را جدا در نظر می‌گیریم و هزینه‌هایی که برای دشمن‌های قبلی کرده‌ایم، در دشمن‌های بعدی تأثیری نخواهد داشت.</p>
+<h3 id="_47">مثال<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h3>
+<h4 id="_48">ورودی نمونه<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>8
+2 2 4 5 11 16 17 20
+3
+12 70
+4 66
+17 80
+</code></pre></div>
+<h4 id="_49">خروجی نمونه<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>5
+0
+3
+</code></pre></div>
+<p>دقت کنید که برای شکست دادن هر دشمن، قدرت سربازها را همان قدرت داده‌شده در ورودی اولیه در نظر بگیرید.</p>
+<p>در مثال داده‌شده مجموع قدرت ۸ سرباز برابر با <span class="arithmatex">\(77\)</span> است.</p>
+<p>برای شکست دادن دشمن اول، باید سربازی با قدرت بیشتر یا مساوی <span class="arithmatex">\(12\)</span> را انتخاب کنیم. سرباز با قدرت <span class="arithmatex">\(11\)</span> را انتخاب و با خرج <span class="arithmatex">\(1\)</span> سکه قدرت او را افزایش می‌دهیم. حال قدرت سربازهای باقی‌مانده <span class="arithmatex">\(66\)</span> است. پس لازم است <span class="arithmatex">\(4\)</span> سکه خرج کنیم تا قدرت سربازهای باقی‌مانده بیشتر یا مساوی قدرت دشمن بشود. پس در کل حداقل <span class="arithmatex">\(5\)</span> سکه باید خرج کنیم.</p>
+<p>برای شکست دادن دشمن دوم، کافیست سرباز با قدرت <span class="arithmatex">\(4\)</span> را انتخاب کنیم و با توجه به اینکه مجموع قدرت سربازهای باقی‌مانده از قدرت حمله‌ی دشمن بیشتر است، نیازی به خرج سکه نداریم.</p>
+<p>برای شکست دادن دشمن سوم، کافیست سرباز با قدرت <span class="arithmatex">\(20\)</span> را انتخاب کنیم و قدرت او را <span class="arithmatex">\(3\)</span> واحد افزایش دهیم. پس حداقل <span class="arithmatex">\(3\)</span> سکه خرج می‌کنیم.</p>
+<details class="success">
+<summary>مشاهده پاسخ</summary>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  برگشت به بالا
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      دانشگاه هرمزگان — گروه مهندسی برق و کامپیوتر
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u06a9\u067e\u06cc \u0634\u062f", "clipboard.copy": "\u06a9\u067e\u06cc \u06a9\u0631\u062f\u0646", "search.result.more.one": "1 \u0645\u0648\u0631\u062f \u062f\u06cc\u06af\u0631 \u062f\u0631 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647", "search.result.more.other": "# \u0645\u0648\u0631\u062f \u062f\u06cc\u06af\u0631 \u062f\u0631 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647", "search.result.none": "\u0633\u0646\u062f\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f", "search.result.one": "1 \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.other": "# \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.placeholder": "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u062c\u0633\u062a\u062c\u0648 \u062a\u0627\u06cc\u067e \u06a9\u0646\u06cc\u062f", "search.result.term.missing": "\u0645\u0648\u062c\u0648\u062f \u0646\u06cc\u0633\u062a", "select.version": "\u0627\u0646\u062a\u062e\u0627\u0628 \u0648\u06cc\u0631\u0627\u06cc\u0634"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../assets/menu-toggle.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
