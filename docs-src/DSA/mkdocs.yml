@@ -60,7 +60,7 @@ markdown_extensions:
 
 nav:
   - پاییز ۱۴۰۵-۱۴۰۶:
-      - جلسات درس: 1405-1406-paeez/index.md
+      - جلسات درس: index.md
 
       - کلاس‌های حل تمرین:
           - حل تمرین تئوری: 1405-1406-paeez/problem-solving/theory.md
