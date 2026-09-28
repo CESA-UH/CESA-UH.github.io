@@ -1,5 +1,5 @@
-site_name: ساختار داده‌ها و الگوریتم
-site_description: ویدیوها، جزوات، تمارین و کدهای درس ساختار داده‌ها و الگوریتم
+site_name: داده‌ساختارها و الگوریتم
+site_description: ویدیوها، جزوات، تمارین و کدهای درس داده‌ساختارها و الگوریتم
 site_dir: ../../courses/DSA
 docs_dir: docs
 use_directory_urls: true
@@ -10,6 +10,7 @@ theme:
   logo: assets/logo-navy.png
   favicon: assets/logo-navy.png
   font: false
+
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -18,6 +19,7 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: تغییر به حالت تاریک
+
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: custom
@@ -25,6 +27,7 @@ theme:
       toggle:
         icon: material/weather-night
         name: تغییر به حالت روشن
+
   features:
     - navigation.sections
     - navigation.top
@@ -36,16 +39,36 @@ theme:
 extra_css:
   - assets/extra.css
 
+extra_javascript:
+  - assets/menu-toggle.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 markdown_extensions:
   - tables
   - attr_list
   - admonition
+
   - toc:
       permalink: true
+      toc_depth: 2
+
   - pymdownx.details
   - pymdownx.superfences
 
+  - pymdownx.arithmatex:
+      generic: true
+
 nav:
-  - پاییز ۱۴۰۵-۱۴۰۶: index.md
+  - پاییز ۱۴۰۵-۱۴۰۶:
+      - جلسات درس: 1405-1406-paeez/index.md
+
+      - کلاس‌های حل تمرین:
+          - حل تمرین تئوری: 1405-1406-paeez/problem-solving/theory.md
+          - حل تمرین برنامه‌نویسی: 1405-1406-paeez/problem-solving/programming.md
+
+      - تمرینات:
+          - تمرینات تئوری: 1405-1406-paeez/exercises/theory/exercise-01.md
+          - تمرینات برنامه‌نویسی:
+              - تمرین سری اول: 1405-1406-paeez/exercises/programming/exercise-01.md
 
 copyright: دانشگاه هرمزگان — گروه مهندسی برق و کامپیوتر
