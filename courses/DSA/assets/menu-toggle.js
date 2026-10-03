@@ -29,25 +29,25 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("DOMContentLoaded", () => {
     const isHomePage =
       window.location.pathname === "/" ||
-      window.location.pathname.endsWith("/index.html");
+      window.location.pathname === "/courses/DSA/" ||
+      window.location.pathname.endsWith("/courses/DSA/index.html");
   
     if (!isHomePage) return;
   
-    const tables = document.querySelectorAll("table");
-  
-    if (!tables.length) return;
-  
-    const table = tables[tables.length - 1];
-    const rows = table.querySelectorAll("tbody tr");
-  
-    if (!rows.length) return;
-  
-    const lastRow = rows[rows.length - 1];
-  
     setTimeout(() => {
+      const table = document.querySelector("main table");
+  
+      if (!table) return;
+  
+      const rows = table.querySelectorAll("tbody tr");
+  
+      if (!rows.length) return;
+  
+      const lastRow = rows[rows.length - 1];
+  
       lastRow.scrollIntoView({
         behavior: "smooth",
         block: "center"
       });
-    }, 900);
+    }, 1000);
   });
