@@ -76,49 +76,6 @@ body,
   font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
 }
 
-@media screen and (min-width: 76.25em) {
-  .hide-desktop-menu-button {
-    display: none !important;
-  }
-
-  .custom-menu-toggle {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 0;
-    border-radius: 6px;
-
-    background: transparent;
-    color: var(--md-primary-bg-color);
-
-    font-size: 24px;
-    cursor: pointer;
-
-    z-index: 20;
-  }
-
-  .custom-menu-toggle:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  body.menu-collapsed .md-sidebar--primary {
-    display: none !important;
-  }
-
-  body.menu-collapsed .md-main__inner {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-}
-
 .question-tag {
   display: inline-block;
   padding: 2px 9px;
