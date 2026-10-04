@@ -1,9 +1,9 @@
+
 **«داده‌ساختار و الگوریتم‌ها» - پاییز ۱۴۰۵**
 
 **استاد:** دکتر شهرام گلزاری
 
 #### برنامه جلسات
-
 
 | جلسه | عنوان                                                      | تاریخ          | اسلاید                                                                                                                                                             | منابع پیشنهادی                                                                 | تمرین‌های پیش از کلاس                                                                                                                        |
 | ---: | ---------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -13,11 +13,11 @@
 |    ۴ | تحلیل الگوریتم‌های ترتیبی و مقدمه‌ای بر تقسیم و حل         | ۳۱ شهریور ۱۴۰۵ | [اسلایدهای جلسه چهارم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/slides/4-SequentialAlgorithmsAnalysis.pdf)  | فصل سوم کتاب دکتر قدسی صفحات ۷۹-۹۳                                             | [تمرینات جلسه چهارم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/exercises/WarmUP-4.pdf) |
 |    ۵ | تقسیم و حل - مقدمه                                         | ۵ مهر ۱۴۰۵     | [اسلایدهای جلسه پنجم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/slides/5-DivideAndConquer(Introduction).pdf) | فصل سوم کتاب دکتر قدسی صفحات ۸۴-۹۳                                             | [تمرینات جلسه پنجم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/exercises/WarmUP-5.pdf)  |
 |    ۶ | تقسیم و حل - مرتب‌سازی ادغامی و تحلیل الگوریتم‌های بازگشتی | ۷ مهر ۱۴۰۵     | [اسلایدهای جلسه ششم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/slides/6-MergeSort.pdf)                       | فصل سوم کتاب دکتر قدسی صفحات ۹۳-۸۹                                             | [تمرینات جلسه ششم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/exercises/WarmUP-6.pdf)   |
-|    ۷ | تحلیل ﻣﺮﺗﺐﺳﺎزی ادغامی و روشﻫﺎی ﺣﻞ راﺑﻄﻪﻫﺎی ﺑﺎزگﺸﺘی         | ۱۲ مهر ۱۴۰۵    | [اسلاید‌های جلسه هفتم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/slides/7-MergeSortAnalysis.pdf)             | فصل سوم کتاب دکتر قدسی صفحات                                                   | تمرینات جلسه هفتم                                                                                                                            |
+|    ۷ | تحلیل ﻣﺮﺗﺐﺳﺎزی ادغامی و روشﻫﺎی ﺣﻞ راﺑﻄﻪﻫﺎی ﺑﺎزگشتی         | ۱۲ مهر ۱۴۰۵    | [اسلاید‌های جلسه هفتم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/slides/7-MergeSortAnalysis.pdf)             | فصل سوم کتاب دکتر قدسی صفحات ۹۳-۸۹                                             | [تمرینات جلسه هفتم](https://github.com/CESA-UH/CESA-UH.github.io/blob/main/docs-src/DSA/docs/1405-1406-paeez/assets/exercises/WarmUP-7.pdf)  |
 
 
 **مراجع درس**:
 
-- قدسی، محمد. (۱۴۰۲). *داده‌ساختارها و مبانی الگوریتم‌ها* (چاپ دهم). انتشارات فاطمی.
-- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). *Introduction to algorithms*. (Fourth edition). The MIT Press.
+- قدسی، محمد. (۱۴۰۲). _داده‌ساختارها و مبانی الگوریتم‌ها_ (چاپ دهم). انتشارات فاطمی.
 
+-  Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). *Introduction to algorithms*. (Fourth edition). The MIT Press.
