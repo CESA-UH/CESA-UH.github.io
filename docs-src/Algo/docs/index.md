@@ -12,8 +12,8 @@
 |    ۴ | تقسیم و حل   | ۳۱ شهریور ۱۴۰۵ | [اسلایدهای جلسه چهارم](1405-1406-paeez/assets/slides/s4.pdf)                      |        -       | [تمرین جلسه چهارم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
 |    ۵ | II تقسیم و حل   | ۵ مهر ۱۴۰۵ | [اسلایدهای جلسه پنجم](1405-1406-paeez/assets/slides/s5.pdf)                      |        -       | [تمرین جلسه پنجم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
 |    ۶ | III تقسیم و حل   | ۷ مهر ۱۴۰۵ | [اسلایدهای جلسه ششم](1405-1406-paeez/assets/slides/s6.pdf)                      |        -       | [تمرین جلسه ششم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
-|    ۷ | حریصانه I   |۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه هفتم](1405-1406-paeez/assets/slides/s6.pdf)                      |        -       | [تمرین جلسه هفتم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
-|    ۸ | حریصانه II   | ۱۴ مهر ۱۴۰۵ | [اسلایدهای جلسه هشتم](1405-1406-paeez/assets/slides/s8.pdf)                      |        -       | [تمرین جلسه هشتم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
+|    ۷ | حریصانه I   |۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه هفتم](1405-1406-paeez/assets/slides/s6.pdf)                      |        -       | [تمرین جلسه هفتم](1405-1406-paeez/assets/exercises/t3.pdf)                     |
+|    ۸ | حریصانه II   | ۱۴ مهر ۱۴۰۵ | [اسلایدهای جلسه هشتم](1405-1406-paeez/assets/slides/s8.pdf)                      |        -       | [تمرین جلسه هشتم](1405-1406-paeez/assets/exercises/t3.pdf)                     |
 **مراجع درس**:
 
 - قدسی، محمد. (۱۴۰۱). _مبانی طراحی و تحلیل الگوریتم‌ها_. انتشارات فاطمی.
