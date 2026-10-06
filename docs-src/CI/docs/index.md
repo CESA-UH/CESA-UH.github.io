@@ -8,6 +8,6 @@
 | ---: | ------- | -------------- | ------------------------------------------------------------------------------ | :------------: | ------------------------------------------------------------------------------ |
 |    ۱ | مقدمه   | ۲۲ شهریور ۱۴۰۵ | [اسلایدهای جلسه اول](1405-1406-paeez/assets/slides/s1.pdf)                      |        -       | [تمرین جلسه اول](1405-1406-paeez/assets/exercises/hw1.pdf)                    |
 |    ۲ | ماشین لرنینگ چیست   | ۲۹ شهریور ۱۴۰۵ | [اسلایدهای جلسه دوم](1405-1406-paeez/assets/slides/ci-1.pdf)                      |        CI-Rudolf Kruse       | [تمرین جلسه دوم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
-|    ۳ | What is Perceptron   | ۵ مهر ۱۴۰۵ | [اسلایدهای جلسه دوم](1405-1406-paeez/assets/slides/ci-1.pdf)                      |        -       | [تمرین جلسه دوم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
-|    ۴ | MPL, GD, BackPropagation   | ۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه دوم](1405-1406-paeez/assets/slides/ci-1.pdf)                      |        -       | [تمرین جلسه دوم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
+|    ۳ | What is Perceptron   | ۵ مهر ۱۴۰۵ | [اسلایدهای جلسه سوم](1405-1406-paeez/assets/slides/ci-3.pdf)                      |        -       | [تمرین جلسه سوم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
+|    ۴ | MPL, GD, BackPropagation   | ۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه چهارم](1405-1406-paeez/assets/slides/ci-4.pdf)                      |        -       | [تمرین جلسه چهارم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
 
