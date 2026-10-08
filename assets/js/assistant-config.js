@@ -1,6 +1,6 @@
 // Public application address only. Never put an API key or account password here.
 window.ECEAssistant = {
-  backendUrl: 'https://40ccb43b7c4fa1.lhr.life',
+  backendUrl: 'https://hamdars-cesa.onrender.com',
   urlFor: function(key) {
     var local = /^(127\.0\.0\.1|localhost)$/.test(location.hostname);
     var hostedTogether = location.pathname.indexOf('/docs-site/') === 0 || new URL(document.baseURI).pathname.indexOf('/docs-site/') === 0;

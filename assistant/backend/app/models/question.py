@@ -59,7 +59,7 @@ class Question(Base):
     )
     assessments: Mapped[list["Assessment"]] = relationship(
         "Assessment",
-        secondary="assessment_questions",
+        secondary=assessment_questions,
         back_populates="questions",
     )
     answers: Mapped[list["Answer"]] = relationship(
