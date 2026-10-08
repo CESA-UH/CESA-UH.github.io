@@ -73,7 +73,7 @@
 
 body,
 .md-typeset {
-  font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  font-family: "Hamishe", "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
 }
 
 .question-tag {
@@ -97,3 +97,5 @@ body,
   font-size: 0.9rem;
   font-weight: 600;
 }
+
+.course-assistant-entry{margin:16px 0 24px;padding:16px;border:1px solid #59899b;border-radius:12px;background:rgba(89,137,155,.08)}.course-assistant-entry a{display:block;text-align:center;font-weight:700}

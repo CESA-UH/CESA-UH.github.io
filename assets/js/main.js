@@ -147,7 +147,19 @@
             a.appendChild(badge);
             a.appendChild(h3);
             a.appendChild(p);
-            grid.appendChild(a);
+            var entry = document.createElement('div');
+            entry.className = 'course-entry';
+            entry.appendChild(a);
+            var assistant = document.createElement('a');
+            assistant.className = 'assistant-link';
+            assistant.dataset.fa = 'دستیار درس و مسیر مطالعه ←';
+            assistant.dataset.en = 'Course assistant & study plan →';
+            var key = course.id + '-' + (course.term_en || 'current').replace(/ /g, '-');
+            var url = window.ECEAssistant && window.ECEAssistant.urlFor(key);
+            if (url) { assistant.href = url; assistant.target = '_blank'; assistant.rel = 'noopener noreferrer'; }
+            else { assistant.setAttribute('aria-disabled', 'true'); }
+            entry.appendChild(assistant);
+            grid.appendChild(entry);
           });
 
           group.appendChild(grid);

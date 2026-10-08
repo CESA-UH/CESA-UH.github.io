@@ -1,1 +1,7 @@
 .venv/
+# Assistant secrets and local state
+**/.env
+**/.env.local
+**/__pycache__/
+assistant/backend/data/
+assistant/backend/.venv/

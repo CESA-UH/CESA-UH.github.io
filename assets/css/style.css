@@ -1,3 +1,5 @@
+@font-face{font-family:Hamishe;src:url("../fonts/DigiHamishe-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Hamishe;src:url("../fonts/DigiHamishe-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
 :root {
   --navy-900: #071633;
   --navy-800: #0b2149;
@@ -41,7 +43,7 @@
 html, body { margin: 0; padding: 0; }
 
 body {
-  font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  font-family: "Hamishe", "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.8;
@@ -385,3 +387,5 @@ a { color: inherit; text-decoration: none; }
     transition-duration: 0.01ms !important;
   }
 }
+
+.course-entry{display:flex;flex-direction:column;gap:12px}.course-entry .course-card{flex:1}.assistant-link{display:block;text-align:center;padding:13px 18px;border:1px solid #59899b;border-radius:12px;color:inherit;font-weight:700;text-decoration:none}.assistant-link:hover{background:rgba(89,137,155,.12)}

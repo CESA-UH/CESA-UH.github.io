@@ -37,9 +37,13 @@ theme:
     - toc.follow
 
 extra_css:
+  - ../../assets/css/site-editor.css
   - assets/extra.css
 
 extra_javascript:
+  - ../../assets/js/assistant-config.js
+  - assets/assistant-course.js
+  - ../../assets/js/site-editor.js
   - assets/menu-toggle.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 

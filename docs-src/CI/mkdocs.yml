@@ -34,6 +34,7 @@ theme:
     - toc.follow
 
 extra_css:
+  - ../../assets/css/site-editor.css
   - assets/extra.css
 
 markdown_extensions:
@@ -49,3 +50,7 @@ nav:
   - پاییز ۱۴۰۵-۱۴۰۶: index.md
 
 copyright: دانشگاه هرمزگان — گروه مهندسی برق و کامپیوتر
+extra_javascript:
+  - ../../assets/js/assistant-config.js
+  - assets/assistant-course.js
+  - ../../assets/js/site-editor.js
