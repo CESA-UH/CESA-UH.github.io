@@ -14,7 +14,7 @@
 |    ۶ | III تقسیم و حل   | ۷ مهر ۱۴۰۵ | [اسلایدهای جلسه ششم](1405-1406-paeez/assets/slides/s6.pdf)                      |        -       | [تمرین جلسه ششم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
 |    ۷ | حریصانه I   |۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه هفتم](1405-1406-paeez/assets/slides/s6.pdf)                      |        -       | [تمرین جلسه هفتم](1405-1406-paeez/assets/exercises/t3.pdf)                     |
 |    ۸ | حریصانه II   | ۱۴ مهر ۱۴۰۵ | [اسلایدهای جلسه هشتم](1405-1406-paeez/assets/slides/s8.pdf)                      |        -       | [تمرین جلسه هشتم](1405-1406-paeez/assets/exercises/t3.pdf)                     |
-|    ۹ | برنامه ریزی پویا I  | ۱۹ مهر ۱۴۰۵ | [اسلایدهای جلسه نهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه نهم](1405-1406-paeez/assets/exercises/t3.pdf)                     |
+|    ۹ | برنامه ریزی پویا I  | ۱۹ مهر ۱۴۰۵ | [اسلایدهای جلسه نهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه نهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
 
 **مراجع درس**:
 
