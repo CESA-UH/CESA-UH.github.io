@@ -10,5 +10,5 @@
 |    ۲ | CI and ML  | ۲۹ شهریور ۱۴۰۵ | [اسلایدهای جلسه دوم](1405-1406-paeez/assets/slides/ci-1.pdf)                      |        CI-Rudolf Kruse       | [تمرین جلسه دوم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
 |    ۳ | What is Perceptron   | ۵ مهر ۱۴۰۵ | [اسلایدهای جلسه سوم](1405-1406-paeez/assets/slides/ci-3.pdf)                      |        -       | [تمرین جلسه سوم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
 |    ۴ | MLP, GD, BackPropagation   | ۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه چهارم](1405-1406-paeez/assets/slides/ci-4.pdf)                      |        -       | [تمرین جلسه چهارم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
-|    ۵ | MPL, FeedForward, SGD   | ۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه پنجم](1405-1406-paeez/assets/slides/ci-4.pdf)                      |        -       | [تمرین جلسه پنجم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
+|    ۵ | MLP, FeedForward, SGD   | ۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه پنجم](1405-1406-paeez/assets/slides/ci-4.pdf)                      |        -       | [تمرین جلسه پنجم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
 
