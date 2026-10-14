@@ -1,0 +1,1471 @@
+
+<!doctype html>
+<html lang="fa" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ویدیوها، جزوات، تمارین و کدهای درس داده‌ساختارها و الگوریتم‌ها">
+      
+      
+      
+      
+        <link rel="prev" href="../exercise-01/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/logo-navy.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>تمرین سری دوم - داده‌ساختارها و الگوریتم‌ها</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="rtl" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          پرش به محتویات
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="سرتیتر">
+    <a href="../../../.." title="داده‌ساختارها و الگوریتم‌ها" class="md-header__button md-logo" aria-label="داده‌ساختارها و الگوریتم‌ها" data-md-component="logo">
+      
+  <img src="../../../../assets/logo-navy.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            داده‌ساختارها و الگوریتم‌ها
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              تمرین سری دوم
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="تغییر به حالت تاریک"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="تغییر به حالت تاریک" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="تغییر به حالت روشن"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="تغییر به حالت روشن" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="جستجو" placeholder="جستجو" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="جستجو">
+        
+        <button type="reset" class="md-search__icon md-icon" title="بازنشانی" aria-label="بازنشانی" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            راه‌اندازی جستجو
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="هدایت" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="داده‌ساختارها و الگوریتم‌ها" class="md-nav__button md-logo" aria-label="داده‌ساختارها و الگوریتم‌ها" data-md-component="logo">
+      
+  <img src="../../../../assets/logo-navy.png" alt="logo">
+
+    </a>
+    داده‌ساختارها و الگوریتم‌ها
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پاییز ۱۴۰۵-۱۴۰۶
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    پاییز ۱۴۰۵-۱۴۰۶
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    صفحه اصلی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    کلاس‌های حل تمرین
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    کلاس‌های حل تمرین
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem-solving/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    حل تمرین تئوری
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem-solving/programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    حل تمرین برنامه‌نویسی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرینات
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    تمرینات
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/exercise-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرینات تئوری
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_2" id="__nav_1_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرینات برنامه‌نویسی
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    تمرینات برنامه‌نویسی
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercise-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرین سری اول
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرین سری دوم
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    تمرین سری دوم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۱ — تبدیل ده‌دهی به دودویی
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۲ — قله در آرایه
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۳ — کسر مسلسل
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۴ — حلقه‌های مقدس
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۵ — دروازه‌ی تالار اصلی
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۱ — تبدیل ده‌دهی به دودویی
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۲ — قله در آرایه
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۳ — کسر مسلسل
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۴ — حلقه‌های مقدس
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سؤال ۵ — دروازه‌ی تالار اصلی
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">تمرین سری عملی ۲<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="_2">سؤال ۱ — تبدیل ده‌دهی به دودویی<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>نوع سؤال:</strong></p>
+<p><strong>محدودیت زمان:</strong> ۰.۱ ثانیه<br />
+<strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
+<p>در سیستم‌های دیجیتال و علوم کامپیوتر، تمام داده‌ها در نهایت به صورت اعداد در مبنای ۲ (بایت‌ها و بیت‌ها) ذخیره می‌شوند. سیستم عددی دودویی (مبنای ۲) تنها از دو رقم <code>0</code> و <code>1</code> تشکیل شده است.</p>
+<p>برنامه‌ای بنویسید که یک عدد صحیح و غیرمنفی <span class="arithmatex">\(N\)</span> را دریافت کند و نمایش آن را در مبنای ۲ چاپ کند.</p>
+<h3 id="_3">ورودی<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>ورودی تنها شامل یک خط است که در آن یک عدد صحیح و غیرمنفی <span class="arithmatex">\(N\)</span> داده می‌شود.</p>
+<div class="arithmatex">\[
+0 \le N \le 10^9
+\]</div>
+<h3 id="_4">خروجی<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>در تنها خط خروجی، رشته‌ی مربوط به نمایش مبنای ۲ عدد <span class="arithmatex">\(N\)</span> را چاپ کنید. خروجی نباید شامل هیچ صفر اضافی باشد (مگر برای خود عدد <code>0</code>).</p>
+<h3 id="_5">مثال<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="_6">ورودی نمونه ۱<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>13
+</code></pre></div>
+<h4 id="_7">خروجی نمونه ۱<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1101
+</code></pre></div>
+<p>عدد ۱۳ در مبنای ۲ به صورت زیر نمایش داده می‌شود:</p>
+<div class="arithmatex">\[
+1 \times 2^3 + 1 \times 2^2 + 0 \times 2^1 + 1 \times 2^0 = 8 + 4 + 0 + 1 = 13
+\]</div>
+<h4 id="_8">ورودی نمونه ۲<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>0
+</code></pre></div>
+<h4 id="_9">خروجی نمونه ۲<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>0
+</code></pre></div>
+<p>برای عدد صفر، خروجی دقیقاً برابر <code>0</code> است.</p>
+<h4 id="_10">ورودی نمونه ۳<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1024
+</code></pre></div>
+<h4 id="_11">خروجی نمونه ۳<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>10000000000
+</code></pre></div>
+<p>عدد ۱۰۲۴ برابر <span class="arithmatex">\(2^{10}\)</span> است؛ بنابراین نمایش دودویی آن یک رقم <code>1</code> و پس از آن ده رقم <code>0</code> است.</p>
+<details class="success">
+<summary>مشاهده پاسخ</summary>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+</details>
+<hr />
+<h2 id="_12">سؤال ۲ — قله در آرایه<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p><strong>نوع سؤال:</strong></p>
+<p><strong>محدودیت زمان:</strong> ۰.۲۵ ثانیه<br />
+<strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
+<p>در یک سیستم ثبت داده‌های آماری، مجموعه‌ای شامل <span class="arithmatex">\(N\)</span> عدد صحیح متمایز (بدون تکرار) در یک آرایه مانند <span class="arithmatex">\(A\)</span> قرار گرفته‌اند.</p>
+<p>یک عنصر از آرایه مانند <span class="arithmatex">\(A[i]\)</span> <strong>«قله» (Peak)</strong> نامیده می‌شود اگر مقدار آن از همسایه‌های مجاور خود بزرگ‌تر باشد.</p>
+<p><strong>نکات مهم:</strong></p>
+<ul>
+<li>برای عناصر میانی (<span class="arithmatex">\(0 &lt; i &lt; N-1\)</span>)، <span class="arithmatex">\(A[i]\)</span> باید هم از عنصر قبلی (<span class="arithmatex">\(A[i-1]\)</span>) و هم از عنصر بعدی (<span class="arithmatex">\(A[i+1]\)</span>) بزرگ‌تر باشد.</li>
+<li><strong>عنصر اول (<span class="arithmatex">\(i = 0\)</span>) و عنصر آخر (<span class="arithmatex">\(i = N-1\)</span>) نیز می‌توانند قله باشند؛</strong> با این تفاوت که عنصر اول فقط با عنصر بعدی‌اش (<span class="arithmatex">\(A[1]\)</span>) و عنصر آخر فقط با عنصر قبلی‌اش (<span class="arithmatex">\(A[N-2]\)</span>) مقایسه می‌شود.</li>
+<li>اگر <span class="arithmatex">\(N = 1\)</span> باشد، تنها عنصر آرایه قله است.</li>
+</ul>
+<p>برنامه‌ای بنویسید که اندیس <span class="arithmatex">\(i\)</span> یکی از عناصر قله را در آرایه پیدا کرده و چاپ کند. تضمین می‌شود همواره حداقل یک قله در آرایه وجود دارد. اگر چند قله وجود داشت، چاپ اندیس هر کدام از آن‌ها به عنوان پاسخ درست پذیرفته می‌شود.</p>
+<h3 id="_13">ورودی<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>ورودی شامل دو خط است:</p>
+<ul>
+<li>در خط اول عدد صحیح <span class="arithmatex">\(N\)</span> (تعداد عناصر آرایه) آمده است.</li>
+<li>در خط دوم <span class="arithmatex">\(N\)</span> عدد صحیح متمایز که با فاصله از هم جدا شده‌اند آمده است.</li>
+</ul>
+<div class="arithmatex">\[
+1 \le N \le 10^7
+\]</div>
+<div class="arithmatex">\[
+-10^9 \le A[i] \le 10^9
+\]</div>
+<h3 id="_14">خروجی<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>خروجی برنامه‌ی شما باید تنها شامل یک عدد صحیح باشد که نشان‌دهنده‌ی اندیس <span class="arithmatex">\(i\)</span> (از <span class="arithmatex">\(0\)</span> تا <span class="arithmatex">\(N-1\)</span>) یکی از عناصر قله در آرایه است.</p>
+<h3 id="_15">مثال<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h4 id="_16">ورودی نمونه ۱<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>5
+1 3 20 4 1
+</code></pre></div>
+<h4 id="_17">خروجی نمونه ۱<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>2
+</code></pre></div>
+<p>عنصر با اندیس <span class="arithmatex">\(i = 2\)</span> مقدار ۲۰ دارد که از همسایه‌های مجاور خود (<span class="arithmatex">\(A[1]=3\)</span> و <span class="arithmatex">\(A[3]=4\)</span>) بزرگ‌تر است.</p>
+<h4 id="_18">ورودی نمونه ۲<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>7
+10 20 15 2 23 90 67
+</code></pre></div>
+<h4 id="_19">خروجی نمونه ۲<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1
+</code></pre></div>
+<p>عنصر با اندیس <span class="arithmatex">\(i = 1\)</span> مقدار ۲۰ دارد و یک قله است. همچنین اندیس <span class="arithmatex">\(i = 5\)</span> با مقدار ۹۰ نیز قله محسوب می‌شود و چاپ هر یک از این دو اندیس صحیح است.</p>
+<h4 id="_20">ورودی نمونه ۳<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>4
+1 2 3 4
+</code></pre></div>
+<h4 id="_21">خروجی نمونه ۳<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>3
+</code></pre></div>
+<p>آرایه اکیداً صعودی است؛ بنابراین عنصر آخر (اندیس <span class="arithmatex">\(i = 3\)</span> با مقدار ۴) که از همسایه‌ی قبلی خود (<span class="arithmatex">\(A[2]=3\)</span>) بزرگ‌تر است، قله محسوب می‌شود.</p>
+<details class="success">
+<summary>مشاهده پاسخ</summary>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+</details>
+<hr />
+<h2 id="_22">سؤال ۳ — کسر مسلسل<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<p><strong>نوع سؤال:</strong></p>
+<p><strong>محدودیت زمان:</strong> ۰.۱ ثانیه<br />
+<strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
+<h3 id="_23">مقدمه و پیش‌زمینه<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p>در ریاضیات، کسرهایی که از قرار گرفتن کسرها داخل یکدیگر (کسرهای تو در تو) به وجود می‌آیند، به <strong>«کسرهای مسلسل» (Continued Fractions)</strong> معروف هستند. ریاضی‌دانان از این ساختارها برای نمایش اعداد و فرمول‌های پیچیده استفاده می‌کنند.</p>
+<p>برای نمایش این فرمول‌های ریاضی در متن‌های دیجیتال، از سیستم حروف‌چینی <strong>LaTeX</strong> استفاده می‌شود. در زبان LaTeX، الگوی اصلی ساخت یک کسر، دستور <code>\frac{a}{b}</code> است:</p>
+<ul>
+<li>پارامتر اول درون آکولد (<code>a</code>)، <strong>صورت کسر</strong> است.</li>
+<li>پارامتر دوم درون آکولد (<code>b</code>)، <strong>مخرج کسر</strong> است.</li>
+</ul>
+<p>اگر یک کسر دیگر داخل صورت یا مخرج قرار گیرد، دستور <code>\frac</code> جدیدی دقیقاً درون آکولد مربوطه نوشته می‌شود.</p>
+<h3 id="_24">صورت مسئله<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>هدف این مسئله، تولید کد متنی LaTeX برای یک کسر مسلسل تو در تو است که با افزایش گام‌ها (<span class="arithmatex">\(n\)</span>)، لایه‌های جدیدی به آن اضافه می‌شود.</p>
+<p>ساختار کلی این کسر مسلسل به شکل زیر است:</p>
+<div class="arithmatex">\[
+1+\frac{2+\frac{4+\cdots}{5+\cdots}}{3+\frac{6+\cdots}{7+\cdots}}
+\]</div>
+<p><strong>نحوه ساخته شدن و الگوی کسر:</strong></p>
+<ol>
+<li><strong>عدد پایه:</strong> فرمول همواره با عدد پایه‌ی <code>1</code> شروع می‌شود. در گام اول فقط خود عدد <code>1</code> وجود دارد و از گام دوم به بعد، پس از آن <code>+</code> و یک کسر قرار می‌گیرد.</li>
+<li><strong>شکل‌گیری کسرها در لایه‌ها:</strong> در هر گام جدید، آخرین اعدادی که در صورت و مخرج داخلی‌ترین کسرها قرار دارند، خود تبدیل به یک عدد به‌همراه یک کسر جدید در لایه‌ی زیرین می‌شوند (به شکل <code>عدد+\frac{...}{...}</code>).</li>
+<li><strong>الگوی صورت‌ها (اعداد زوج):</strong> اعدادی که در صورت کسرها قرار می‌گیرند، همواره <strong>اعداد زوج</strong> هستند.</li>
+<li><strong>الگوی مخرج‌ها (اعداد فرد):</strong> اعدادی که در مخرج کسرها قرار می‌گیرند، همواره <strong>اعداد فرد</strong> هستند.</li>
+<li><strong>ترتیب شماره‌گذاری:</strong> اعداد <span class="arithmatex">\(2, 3, 4, 5, \dots\)</span> به ترتیب، لایه‌به‌لایه و در هر لایه از چپ به راست مصرف می‌شوند. در هر کسر ابتدا عدد زوج (صورت) و بلافاصله عدد فرد بعد از آن (مخرج) قرار می‌گیرد. لایه‌ی اول شامل اعداد <span class="arithmatex">\(2\)</span> و <span class="arithmatex">\(3\)</span>، لایه‌ی دوم شامل اعداد <span class="arithmatex">\(4\)</span> تا <span class="arithmatex">\(7\)</span> و لایه‌ی سوم شامل اعداد <span class="arithmatex">\(8\)</span> تا <span class="arithmatex">\(15\)</span> است. به‌طور کلی لایه‌ی <span class="arithmatex">\(k\)</span>-ام شامل اعداد <span class="arithmatex">\(2^k\)</span> تا <span class="arithmatex">\(2^{k+1}-1\)</span> است.</li>
+<li>در گام <span class="arithmatex">\(n\)</span>، لایه‌های <span class="arithmatex">\(1\)</span> تا <span class="arithmatex">\(n-1\)</span> ساخته می‌شوند. اعداد لایه‌ی آخر (لایه‌ی <span class="arithmatex">\(n-1\)</span>) به‌تنهایی نوشته می‌شوند و اعداد لایه‌های قبلی هر کدام با یک کسر جدید ادامه پیدا می‌کنند.</li>
+</ol>
+<p>برنامه‌ای بنویسید که عدد طبیعی <span class="arithmatex">\(n\)</span> را از ورودی دریافت کرده و کد متنی LaTeX دقیق این کسر را پس از <span class="arithmatex">\(n\)</span> گام ساخت تولید کند.</p>
+<h3 id="_25">ورودی<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>ورودی تنها شامل یک خط است که در آن یک عدد صحیح <span class="arithmatex">\(n\)</span> به عنوان گام ساخت کسر داده می‌شود.</p>
+<div class="arithmatex">\[
+1 \le n \le 10
+\]</div>
+<h3 id="_26">خروجی<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p>در تنها خط خروجی، کد متنی دقیق LaTeX مربوط به کسر ساخته‌شده را چاپ کنید.</p>
+<p><strong>نکات الزامی برای خروجی:</strong></p>
+<ol>
+<li><strong>عدم وجود فاصله (Space):</strong> در تمامی طول رشته‌ی خروجی <strong>نباید هیچ کاراکتر فاصله‌ای (Space)</strong> وجود داشته باشد.</li>
+<li><strong>صحت علائم و دستورات:</strong> تمامی علائم ریاضی (<code>+</code>) و دستورات لاتک (<code>\frac{...}{...}</code>) باید دقیقاً مطابق الگوی مسئله چاپ شوند.</li>
+<li><strong>تطابق آکولدها:</strong> تمامی آکولدهای بازشده برای صورت و مخرج کسرها باید در انتهای رشته دقیقاً در جای مناسب خود بسته شوند.</li>
+</ol>
+<h3 id="_27">مثال<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<h4 id="_28">ورودی نمونه ۱<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1
+</code></pre></div>
+<h4 id="_29">خروجی نمونه ۱<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1
+</code></pre></div>
+<p>در گام اول (<span class="arithmatex">\(n=1\)</span>) هنوز هیچ کسری تشکیل نمی‌شود. طبق الگوی مسئله، تنها عدد پایه یعنی <code>1</code> در خروجی قرار می‌گیرد.</p>
+<h4 id="_30">ورودی نمونه ۲<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>2
+</code></pre></div>
+<h4 id="_31">خروجی نمونه ۲<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1+\frac{2}{3}
+</code></pre></div>
+<p>در گام دوم (<span class="arithmatex">\(n=2\)</span>) اولین کسر ساخته می‌شود:</p>
+<ol>
+<li>ابتدا عبارت پایه یعنی <code>1+</code> نوشته می‌شود.</li>
+<li>سپس اولین کسر با دستور <code>\frac{2}{3}</code> اضافه می‌گردد؛ که در آن اولین عدد زوج (<code>2</code>) در صورت و اولین عدد فرد (<code>3</code>) در مخرج قرار دارد.</li>
+<li>در کل رشته هیچ کاراکتر فاصله‌ای وجود ندارد.</li>
+</ol>
+<h4 id="_32">ورودی نمونه ۳<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>3
+</code></pre></div>
+<h4 id="_33">خروجی نمونه ۳<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1+\frac{2+\frac{4}{5}}{3+\frac{6}{7}}
+</code></pre></div>
+<p>در گام سوم (<span class="arithmatex">\(n=3\)</span>) کسر قبلی باز شده و لایه‌ی جدیدی تشکیل می‌دهد:</p>
+<ol>
+<li>فرمول با همان <code>1+</code> شروع می‌شود و کسر اصلی ساخته می‌شود.</li>
+<li>در <strong>صورت</strong> کسر اصلی، پس از عدد <code>2+</code> یک کسر جدید ایجاد می‌شود. در صورت این کسر جدید عدد زوج بعدی (<code>4</code>) و در مخرج آن عدد فرد بعدی (<code>5</code>) قرار می‌گیرد: <code>\frac{4}{5}</code>.</li>
+<li>در <strong>مخرج</strong> کسر اصلی، پس از عدد <code>3+</code> نیز یک کسر جدید ایجاد می‌شود. در صورت این کسر جدید عدد زوج بعدی (<code>6</code>) و در مخرج آن عدد فرد بعدی (<code>7</code>) قرار می‌گیرد: <code>\frac{6}{7}</code>.</li>
+<li>تمام آکولدهای مربوط به کسرها بدون هیچ کاراکتر اضافی در انتهای عبارت بسته می‌شوند.</li>
+</ol>
+<h4 id="_34">ورودی نمونه ۴<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>4
+</code></pre></div>
+<h4 id="_35">خروجی نمونه ۴<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1+\frac{2+\frac{4+\frac{8}{9}}{5+\frac{10}{11}}}{3+\frac{6+\frac{12}{13}}{7+\frac{14}{15}}}
+</code></pre></div>
+<p>در گام چهارم (<span class="arithmatex">\(n=4\)</span>) هر یک از اعداد <span class="arithmatex">\(4\)</span> تا <span class="arithmatex">\(7\)</span> (لایه‌ی دوم) با یک کسر جدید ادامه پیدا می‌کنند:</p>
+<ul>
+<li>عدد <code>4</code> با کسر <code>\frac{8}{9}</code></li>
+<li>عدد <code>5</code> با کسر <code>\frac{10}{11}</code></li>
+<li>عدد <code>6</code> با کسر <code>\frac{12}{13}</code></li>
+<li>عدد <code>7</code> با کسر <code>\frac{14}{15}</code></li>
+</ul>
+<details class="success">
+<summary>مشاهده پاسخ</summary>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+</details>
+<hr />
+<h2 id="_36">سؤال ۴ — حلقه‌های مقدس<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<p><strong>نوع سؤال:</strong></p>
+<p><strong>محدودیت زمان:</strong> ۱ ثانیه<br />
+<strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
+<p>در روزگاران کهن، در سرزمین مرتفع «آرکانیس»، سه صخره‌ی عظیم به نام‌های <strong>الماس (D)</strong>، <strong>زمرد (E)</strong> و <strong>عقیق (A)</strong> بر فراز دره‌ای عمیق و پر از گدازه قرار داشتند. معبد کهن روی صخره‌ی الماس بنا نهاده شده بود و راهبان از <span class="arithmatex">\(n\)</span> حلقه‌ی سنگی مقدس که هر کدام وزنی مشخص داشتند، مراقبت می‌کردند. این حلقه‌ها به ترتیب اندازه، از کوچک‌ترین به بزرگ‌ترین، روی یکدیگر چیده شده بودند.</p>
+<p>یک روز با پیش‌بینی یک طوفان سهمگین، استاد بزرگ معبد، <strong>سهراب</strong>، شاگرد جوان خود <strong>بابک</strong> را فراخواند و گفت: «برای حفظ جادوی معبد، باید تمام <span class="arithmatex">\(n\)</span> حلقه را از صخره‌ی الماس (D) به صخره‌ی عقیق (A) منتقل کنی. اما قوانین مقدس معبد را هرگز فراموش نکن!»</p>
+<p>استاد سهراب اشاره کرد که به دلیل ویران شدن پل مستقیم میان الماس و عقیق، <strong>هیچ رفت‌وآمد مستقیمی بین صخره‌ی D و صخره‌ی A ممکن نیست.</strong> بابک برای انتقال هر حلقه، حتماً باید ابتدا آن را روی صخره‌ی میانی، یعنی <strong>زمرد (E)</strong> بگذارد و سپس به مقصد ببرد. همچنین جادوی حلقه‌ها به گونه‌ای است که در هر مرحله تنها می‌توان <strong>یک حلقه</strong> را برداشت و <strong>هیچ‌گاه نباید یک حلقه‌ی بزرگ‌تر روی یک حلقه‌ی کوچک‌تر قرار بگیرد</strong>؛ چرا که سنگینی آن باعث شکستن حلقه‌ی زیرین می‌شود.</p>
+<p>بابک نگران استحکام صخره‌ی زمرد (E) بود، زیرا این صخره‌ی میانی ظریف‌تر از بقیه بود. استاد سهراب به او یادآور شد که اگر مجموع وزن حلقه‌های موجود روی صخره‌ی زمرد در هر لحظه در یک بازه‌ی مشخص (محدوده‌ی خطر) قرار بگیرد، صخره ترک برمی‌دارد. او از بابک خواست تا تمام مراحل جابه‌جایی را رسم کرده و تعداد دفعاتی که صخره‌ی زمرد در محدوده‌ی خطر قرار می‌گیرد را بشمارد.</p>
+<p>حال شما باید به بابک کمک کنید تا نقشه‌ی راه خود را رسم کند. برنامه‌ای بنویسید که تعداد حلقه‌ها، وزن هر یک و بازه‌ی خطر را دریافت کرده، تمام مراحل جابه‌جایی را چاپ کند و در نهایت تعداد دفعاتی که صخره‌ی زمرد در محدوده‌ی خطر قرار گرفته است را محاسبه نماید.</p>
+<blockquote>
+<p><strong>توجه:</strong> تعداد دفعات قرارگیری در محدوده‌ی خطر، برابر است با تعداد حرکت‌هایی که پس از انجام آن‌ها، مجموع وزن حلقه‌های روی صخره‌ی <span class="arithmatex">\(E\)</span> در بازه‌ی خطر قرار دارد. وضعیت اولیه (قبل از اولین حرکت) شمرده نمی‌شود. در ابتدا تمام حلقه‌ها روی صخره‌ی <span class="arithmatex">\(D\)</span> هستند و صخره‌های <span class="arithmatex">\(E\)</span> و <span class="arithmatex">\(A\)</span> خالی‌اند.</p>
+</blockquote>
+<h3 id="_37">ورودی<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
+<p>ورودی برنامه شامل سه خط است:</p>
+<ul>
+<li>در خط اول عدد صحیح <span class="arithmatex">\(n\)</span> (تعداد کل حلقه‌ها) آمده است.</li>
+<li>در خط دوم <span class="arithmatex">\(n\)</span> عدد طبیعی که با فاصله از هم جدا شده‌اند آمده است و نشان‌دهنده‌ی وزن حلقه‌ها به ترتیب از کوچک‌ترین حلقه (<span class="arithmatex">\(W_1\)</span>) تا بزرگ‌ترین حلقه (<span class="arithmatex">\(W_n\)</span>) است.</li>
+<li>در خط سوم دو عدد طبیعی <span class="arithmatex">\(L\)</span> و <span class="arithmatex">\(R\)</span> که با فاصله از هم جدا شده‌اند آمده است. این دو عدد به ترتیب نشان‌دهنده‌ی کران پایین و کران بالای بازه‌ی خطر صخره‌ی زمرد هستند (<span class="arithmatex">\(L &lt; R\)</span>). هرگاه مجموع وزن روی صخره‌ی زمرد در بازه‌ی <span class="arithmatex">\((L, R]\)</span> قرار گیرد، صخره صدای ترک می‌دهد.</li>
+</ul>
+<div class="arithmatex">\[
+1 \le n \le 12
+\]</div>
+<div class="arithmatex">\[
+1 \le W_i \le 1000
+\]</div>
+<div class="arithmatex">\[
+0 \le L &lt; R \le 12000
+\]</div>
+<p>قالب ورودی:</p>
+<div class="highlight"><pre><span></span><code>n
+W1 W2 ... Wn
+L R
+</code></pre></div>
+<h3 id="_38">خروجی<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<p>خروجی برنامه‌ی شما شامل دو بخش است:</p>
+<ol>
+<li>
+<p><strong>مراحل جابه‌جایی:</strong> به ازای هر حرکت، یک خط شامل شماره‌ی حلقه (از <span class="arithmatex">\(1\)</span> برای کوچک‌ترین تا <span class="arithmatex">\(n\)</span> برای بزرگ‌ترین)، علامت <code>:</code> و مسیر حرکت به فرمت <code>مبدأ -&gt; مقصد</code> چاپ می‌شود. نام صخره‌ها باید دقیقاً یکی از مقادیر <code>D</code> (الماس)، <code>E</code> (زمرد) یا <code>A</code> (عقیق) باشد. فرمت هر خط به صورت <code>X: Y -&gt; Z</code> است.</p>
+</li>
+<li>
+<p><strong>تعداد دفعات قرارگیری در محدوده‌ی خطر:</strong> در خط پایانی خروجی، تعداد دفعاتی که مجموع وزن حلقه‌های موجود روی صخره‌ی <span class="arithmatex">\(E\)</span> در بازه‌ی <span class="arithmatex">\((L, R]\)</span> قرار گرفته است (یعنی <span class="arithmatex">\(L &lt; \text{Weight}_E \le R\)</span>) با پیام زیر چاپ می‌شود:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>Danger zone count on E: K
+</code></pre></div>
+<h3 id="_39">مثال<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
+<h4 id="_40">ورودی نمونه ۱<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1
+15
+0 15
+</code></pre></div>
+<h4 id="_41">خروجی نمونه ۱<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1: D -&gt; E
+1: E -&gt; A
+Danger zone count on E: 1
+</code></pre></div>
+<ul>
+<li><strong>وضعیت اولیه:</strong> ۱ حلقه با وزن ۱۵ روی صخره‌ی <span class="arithmatex">\(D\)</span> قرار دارد و صخره‌های <span class="arithmatex">\(E\)</span> و <span class="arithmatex">\(A\)</span> خالی هستند.</li>
+<li><strong>بازه‌ی خطر:</strong> بازه‌ی <span class="arithmatex">\((0, 15]\)</span> است (وزن‌های بزرگ‌تر از ۰ و کوچک‌تر یا مساوی ۱۵).</li>
+</ul>
+<p>بررسی مراحل جابه‌جایی:</p>
+<ol>
+<li><code>1: D -&gt; E</code> ← تنها حلقه‌ی موجود (حلقه‌ی ۱) از صخره‌ی <span class="arithmatex">\(D\)</span> به صخره‌ی <span class="arithmatex">\(E\)</span> منتقل می‌شود. وزن روی <span class="arithmatex">\(E\)</span> برابر ۱۵ است که در بازه‌ی <span class="arithmatex">\((0, 15]\)</span> قرار می‌گیرد. (۱ بار ورود به محدوده‌ی خطر)</li>
+<li><code>1: E -&gt; A</code> ← حلقه‌ی ۱ از صخره‌ی <span class="arithmatex">\(E\)</span> به صخره‌ی <span class="arithmatex">\(A\)</span> منتقل می‌شود. صخره‌ی <span class="arithmatex">\(E\)</span> دوباره خالی می‌شود (وزن روی <span class="arithmatex">\(E\)</span> برابر ۰ و خارج از بازه است).</li>
+</ol>
+<p><strong>نتیجه‌ی نهایی:</strong> در طول تمام جابه‌جایی‌ها، مجموع وزن موجود روی صخره‌ی <span class="arithmatex">\(E\)</span> دقیقاً ۱ بار در محدوده‌ی خطر قرار گرفت.</p>
+<h4 id="_42">ورودی نمونه ۲<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>2
+100 5
+70 105
+</code></pre></div>
+<h4 id="_43">خروجی نمونه ۲<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1: D -&gt; E
+1: E -&gt; A
+2: D -&gt; E
+1: A -&gt; E
+1: E -&gt; D
+2: E -&gt; A
+1: D -&gt; E
+1: E -&gt; A
+Danger zone count on E: 3
+</code></pre></div>
+<ul>
+<li><strong>وضعیت اولیه:</strong> حلقه‌ی ۱ (وزن ۱۰۰) و حلقه‌ی ۲ (وزن ۵) روی صخره‌ی <span class="arithmatex">\(D\)</span> قرار دارند.</li>
+<li><strong>بازه‌ی خطر:</strong> بازه‌ی <span class="arithmatex">\((70, 105]\)</span> است.</li>
+</ul>
+<p>بررسی خط به خط وضعیت صخره‌ی زمرد (<span class="arithmatex">\(E\)</span>):</p>
+<ol>
+<li><code>1: D -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۱۰۰ (در بازه) ← <strong>ترک اول</strong></li>
+<li><code>1: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۰</li>
+<li><code>2: D -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۵</li>
+<li><code>1: A -&gt; E</code> ← حلقه‌ی ۱ دوباره روی <span class="arithmatex">\(E\)</span> می‌آید در حالی که حلقه‌ی ۲ هم روی آن است. وزن روی <span class="arithmatex">\(E\)</span>: <span class="arithmatex">\(100 + 5 = 105\)</span> (در بازه) ← <strong>ترک دوم</strong></li>
+<li><code>1: E -&gt; D</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۵</li>
+<li><code>2: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۰</li>
+<li><code>1: D -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۱۰۰ (در بازه) ← <strong>ترک سوم</strong></li>
+<li><code>1: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۰</li>
+</ol>
+<p><strong>نتیجه‌ی نهایی:</strong> صخره‌ی <span class="arithmatex">\(E\)</span> در طول جابه‌جایی‌ها مجموعاً ۳ بار صدای ترک داد.</p>
+<h4 id="_44">ورودی نمونه ۳<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>3
+10 20 30
+35 60
+</code></pre></div>
+<h4 id="_45">خروجی نمونه ۳<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>1: D -&gt; E
+1: E -&gt; A
+2: D -&gt; E
+1: A -&gt; E
+1: E -&gt; D
+2: E -&gt; A
+1: D -&gt; E
+1: E -&gt; A
+3: D -&gt; E
+1: A -&gt; E
+1: E -&gt; D
+2: A -&gt; E
+1: D -&gt; E
+1: E -&gt; A
+2: E -&gt; D
+1: A -&gt; E
+1: E -&gt; D
+3: E -&gt; A
+1: D -&gt; E
+1: E -&gt; A
+2: D -&gt; E
+1: A -&gt; E
+1: E -&gt; D
+2: E -&gt; A
+1: D -&gt; E
+1: E -&gt; A
+Danger zone count on E: 5
+</code></pre></div>
+<ul>
+<li><strong>وضعیت اولیه:</strong> ۳ حلقه با وزن‌های ۱۰، ۲۰ و ۳۰ روی صخره‌ی <span class="arithmatex">\(D\)</span> قرار دارند.</li>
+<li><strong>بازه‌ی خطر:</strong> بازه‌ی <span class="arithmatex">\((35, 60]\)</span> است.</li>
+</ul>
+<p>بررسی خط به خط وضعیت صخره‌ی زمرد (<span class="arithmatex">\(E\)</span>):</p>
+<ol>
+<li><code>1: D -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۱۰</li>
+<li><code>1: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۰</li>
+<li><code>2: D -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۲۰</li>
+<li><code>1: A -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: <span class="arithmatex">\(20 + 10 = 30\)</span></li>
+<li><code>1: E -&gt; D</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۲۰</li>
+<li><code>2: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۰</li>
+<li><code>1: D -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۱۰</li>
+<li><code>1: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۰</li>
+<li><code>3: D -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۳۰</li>
+<li><code>1: A -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: <span class="arithmatex">\(30 + 10 = 40\)</span> (در بازه) ← <strong>ترک اول</strong></li>
+<li><code>1: E -&gt; D</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۳۰</li>
+<li><code>2: A -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: <span class="arithmatex">\(30 + 20 = 50\)</span> (در بازه) ← <strong>ترک دوم</strong></li>
+<li><code>1: D -&gt; E</code> ← هر ۳ حلقه هم‌زمان روی <span class="arithmatex">\(E\)</span> قرار می‌گیرند. وزن روی <span class="arithmatex">\(E\)</span>: <span class="arithmatex">\(10 + 20 + 30 = 60\)</span> (در بازه) ← <strong>ترک سوم</strong></li>
+<li><code>1: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: <span class="arithmatex">\(30 + 20 = 50\)</span> (در بازه) ← <strong>ترک چهارم</strong></li>
+<li><code>2: E -&gt; D</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۳۰</li>
+<li><code>1: A -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: <span class="arithmatex">\(30 + 10 = 40\)</span> (در بازه) ← <strong>ترک پنجم</strong></li>
+<li><code>1: E -&gt; D</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۳۰</li>
+<li><code>3: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۰</li>
+<li><code>1: D -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۱۰</li>
+<li><code>1: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۰</li>
+<li><code>2: D -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۲۰</li>
+<li><code>1: A -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: <span class="arithmatex">\(20 + 10 = 30\)</span></li>
+<li><code>1: E -&gt; D</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۲۰</li>
+<li><code>2: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۰</li>
+<li><code>1: D -&gt; E</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۱۰</li>
+<li><code>1: E -&gt; A</code> ← وزن روی <span class="arithmatex">\(E\)</span>: ۰</li>
+</ol>
+<p><strong>نتیجه‌ی نهایی:</strong> صخره‌ی <span class="arithmatex">\(E\)</span> در طول فرایند انتقال مجموعاً ۵ بار صدای ترک داد.</p>
+<details class="success">
+<summary>مشاهده پاسخ</summary>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+</details>
+<hr />
+<h2 id="_46">سؤال ۵ — دروازه‌ی تالار اصلی<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h2>
+<p><strong>نوع سؤال:</strong></p>
+<p><strong>محدودیت زمان:</strong> ۰.۱ ثانیه<br />
+<strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
+<p>پس از عبور موفقیت‌آمیز از صخره‌های سه‌گانه و انتقال تمام حلقه‌های مقدس، سهراب و بابک وارد دهلیز اصلی معبد سرخ شدند.</p>
+<p>در انتهای این دهلیز، دروازه‌ی تالار اصلی قرار دارد که تنها راه عبور از آن، گذر از یک شبکه‌ی دوبعدی به ابعاد <span class="arithmatex">\(N \times M\)</span> از سنگ‌فرش‌های جادویی است. روی هر سنگ‌فرش عددی حک شده است که «مقدار انرژی جادویی» آن خانه را نشان می‌دهد (این عدد می‌تواند مثبت، صفر یا منفی باشد). همچنین برخی از سنگ‌فرش‌ها به علت طوفان به کلی ویران شده‌اند (که با کاراکتر <code>#</code> مشخص شده‌اند) و امکان پا گذاشتن روی آن‌ها به هیچ عنوان وجود ندارد.</p>
+<p>استاد سهراب کتیبه‌ی روی دیوار دهلیز را برای بابک خواند: «برای گشودن دروازه، باید از سنگ‌فرش شمال‌غربی یعنی خانه <span class="arithmatex">\((0,0)\)</span> حرکت خود را آغاز کرده و خود را به سنگ‌فرش جنوب‌شرقی یعنی خانه <span class="arithmatex">\((N-1, M-1)\)</span> برسانید. اما حافظ جادوی معبد به گونه‌ای ساخته شده است که اگر مجموع انرژی انباشته‌شده‌ی شما در هر نقطه از مسیر منفی (<span class="arithmatex">\(&lt; 0\)</span>) شود، جادوی معبد باطل شده و سنگ‌فرش زیر پایتان فرو می‌ریزد. همچنین جادوی معبد اجازه نمی‌دهد به دو خانه‌ی متوالی با انرژی یکسان پا بگذارید. طبق افسانه‌ها، <strong>تضمین شده است که در این معبد دقیقاً یک تک‌مسیر نجات معتبر وجود دارد</strong> که تمام این شرایط را برآورده می‌کند. وظیفه‌ی شما تنها یافتن این مسیر و محاسبه‌ی مجموع انرژی آن است!»</p>
+<p>حال شما باید به بابک کمک کنید تا با نوشتن برنامه‌ای دقیق، مجموع کل انرژی‌های آن تک‌مسیر نجات را محاسبه کند.</p>
+<p><strong>قوانین و شرایط کامل حرکت در شبکه:</strong></p>
+<ol>
+<li><strong>جهت‌های مجاز حرکت:</strong> از هر خانه، تنها می‌توانید به خانه‌ی سمت راست یا خانه‌ی سمت پایین بروید.</li>
+<li><strong>موانع فیزیکی (خانه‌های ویران‌شده):</strong> ورود به خانه‌هایی که با کاراکتر <code>#</code> مشخص شده‌اند مطلقاً ممنوع است.</li>
+<li><strong>شرط عدم تکرار انرژی در دو خانه‌ی متوالی:</strong> مقدار انرژی خانه‌ای که می‌خواهید وارد آن شوید (<span class="arithmatex">\(\text{Energy}_{\text{next}}\)</span>) نباید با مقدار انرژی خانه‌ای که هم‌اکنون روی آن قرار دارید (<span class="arithmatex">\(\text{Energy}_{\text{current}}\)</span>) برابر باشد. به زبان ریاضی:</li>
+</ol>
+<div class="arithmatex">\[
+\text{Energy}_{\text{next}} \neq \text{Energy}_{\text{current}}
+\]</div>
+<ol>
+<li><strong>شرط بقای انرژی (عدم منفی شدن مجموع انباشته):</strong> مجموع انرژی‌های تمام خانه‌های طی‌شده از خانه‌ی شروع <span class="arithmatex">\((0,0)\)</span> تا هر خانه‌ی دلخواه <span class="arithmatex">\(k\)</span> در طول مسیر، همواره باید بزرگ‌تر یا مساوی صفر باشد. یعنی در هیچ نقطه‌ای از مسیر نباید مجموع انرژی انباشته‌شده منفی شود:</li>
+</ol>
+<div class="arithmatex">\[
+\sum_{i=0}^{k} \text{Energy}_i \ge 0
+\]</div>
+<h3 id="_47">ورودی<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h3>
+<p>ورودی برنامه شامل بخش‌های زیر است که باید دقیقاً به همین ترتیب خوانده شوند:</p>
+<ul>
+<li><strong>خط اول:</strong> شامل دو عدد صحیح <span class="arithmatex">\(N\)</span> (تعداد سطرهای شبکه) و <span class="arithmatex">\(M\)</span> (تعداد ستون‌های شبکه) است که با یک فاصله از هم جدا شده‌اند.</li>
+<li><strong><span class="arithmatex">\(N\)</span> خط بعدی:</strong> در هر خط دقیقاً <span class="arithmatex">\(M\)</span> مقدار قرار دارد که با فاصله (Space) از یکدیگر جدا شده‌اند. هر خانه در این شبکه یکی از دو حالت زیر است:<ol>
+<li>یک عدد صحیح: نشان‌دهنده‌ی مقدار انرژی جادویی آن سنگ‌فرش است.</li>
+<li>کاراکتر <code>#</code>: نشان‌دهنده‌ی خانه‌ی ویران‌شده (مانع غیرقابل عبور) است.</li>
+</ol>
+</li>
+</ul>
+<p>محدودیت‌ها:</p>
+<div class="arithmatex">\[
+1 \le N, M \le 10
+\]</div>
+<div class="arithmatex">\[
+E_{i,j} \in [-100, 100] \quad \lor \quad E_{i,j} = \text{'\#'}
+\]</div>
+<h3 id="_48">خروجی<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h3>
+<p>برنامه‌ی شما در تنها خط خروجی باید یک عدد صحیح چاپ کند:</p>
+<ul>
+<li>مجموع کل انرژی‌های خانه‌ی شروع <span class="arithmatex">\((0,0)\)</span> تا خانه‌ی مقصد <span class="arithmatex">\((N-1,M-1)\)</span> در آن تک‌مسیر معتبر.</li>
+</ul>
+<p>در تمامی تست‌کیس‌ها تضمین می‌شود که <strong>دقیقاً یک مسیر معتبر</strong> وجود دارد.</p>
+<h3 id="_49">مثال<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h3>
+<h4 id="_50">ورودی نمونه ۱<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>3 3
+10 5 -100
+-100 -2 -100
+-100 4 1
+</code></pre></div>
+<h4 id="_51">خروجی نمونه ۱<a class="headerlink" href="#_51" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>18
+</code></pre></div>
+<p>شبکه دارای ۳ سطر و ۳ ستون است. خانه‌ی شروع <span class="arithmatex">\((0,0)\)</span> دارای انرژی اولیه‌ی <span class="arithmatex">\(10\)</span> است.</p>
+<ul>
+<li><strong>قدم اول (شروع):</strong> در خانه‌ی <span class="arithmatex">\((0,0)\)</span> قرار داریم. مجموع انرژی انباشته <span class="arithmatex">\(10 \ge 0\)</span> است.</li>
+<li><strong>بررسی حرکت به پایین:</strong> اگر به خانه‌ی <span class="arithmatex">\((1,0)\)</span> برویم، انرژی آن <span class="arithmatex">\(-100\)</span> است و مجموع جدید <span class="arithmatex">\(10 + (-100) = -90\)</span> منفی می‌شود؛ بنابراین این حرکت باطل است.</li>
+<li><strong>بررسی حرکت به راست:</strong> به خانه‌ی <span class="arithmatex">\((0,1)\)</span> با انرژی <span class="arithmatex">\(5\)</span> می‌رویم:<ul>
+<li>شرط ۱: <span class="arithmatex">\(5 \neq 10\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(10 + 5 = 15 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+<li><strong>در خانه‌ی <span class="arithmatex">\((0,1)\)</span>:</strong><ul>
+<li>حرکت به راست به خانه‌ی <span class="arithmatex">\((0,2)\)</span> با انرژی <span class="arithmatex">\(-100\)</span> مجموع را منفی می‌کند (<span class="arithmatex">\(15 + (-100) = -85\)</span>) ← مسدود.</li>
+<li>تنها راه، حرکت به پایین به خانه‌ی <span class="arithmatex">\((1,1)\)</span> با انرژی <span class="arithmatex">\(-2\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(-2 \neq 5\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(15 + (-2) = 13 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>در خانه‌ی <span class="arithmatex">\((1,1)\)</span>:</strong><ul>
+<li>حرکت به راست به خانه‌ی <span class="arithmatex">\((1,2)\)</span> با انرژی <span class="arithmatex">\(-100\)</span> مجموع را منفی می‌کند (<span class="arithmatex">\(13 + (-100) = -87\)</span>) ← مسدود.</li>
+<li>تنها راه، حرکت به پایین به خانه‌ی <span class="arithmatex">\((2,1)\)</span> با انرژی <span class="arithmatex">\(4\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(4 \neq -2\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(13 + 4 = 17 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>در خانه‌ی <span class="arithmatex">\((2,1)\)</span>:</strong><ul>
+<li>تنها حرکت ممکن، رفتن به راست به خانه‌ی مقصد <span class="arithmatex">\((2,2)\)</span> با انرژی <span class="arithmatex">\(1\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(1 \neq 4\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(17 + 1 = 18 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>نتیجه‌ی نهایی:</strong> در تمام شبکه دقیقاً ۱ مسیر نجات معتبر وجود دارد و مجموع کل انرژی‌های این مسیر برابر است با:</p>
+<div class="arithmatex">\[
+10 + 5 + (-2) + 4 + 1 = 18
+\]</div>
+<h4 id="_52">ورودی نمونه ۲<a class="headerlink" href="#_52" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>3 3
+5 # 10
+2 3 4
+# # 1
+</code></pre></div>
+<h4 id="_53">خروجی نمونه ۲<a class="headerlink" href="#_53" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>15
+</code></pre></div>
+<p>شبکه دارای ۳ سطر و ۳ ستون است. خانه‌ی شروع <span class="arithmatex">\((0,0)\)</span> دارای انرژی اولیه‌ی <span class="arithmatex">\(5\)</span> است.</p>
+<ul>
+<li><strong>قدم اول (شروع):</strong> در خانه‌ی <span class="arithmatex">\((0,0)\)</span> قرار داریم. مجموع انرژی انباشته <span class="arithmatex">\(5 \ge 0\)</span> است.</li>
+<li><strong>بررسی حرکت به راست:</strong> خانه‌ی <span class="arithmatex">\((0,1)\)</span> دارای کاراکتر <code>#</code> (مانع غیرقابل عبور) است؛ بنابراین حرکت به راست ممنوع است.</li>
+<li><strong>بررسی حرکت به پایین:</strong> تنها مسیر معتبر، حرکت به خانه‌ی <span class="arithmatex">\((1,0)\)</span> با انرژی <span class="arithmatex">\(2\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(2 \neq 5\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(5 + 2 = 7 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+<li><strong>در خانه‌ی <span class="arithmatex">\((1,0)\)</span>:</strong><ul>
+<li>حرکت به پایین به خانه‌ی <span class="arithmatex">\((2,0)\)</span> مسدود است (مانع <code>#</code>).</li>
+<li>تنها مسیر ممکن، حرکت به راست به خانه‌ی <span class="arithmatex">\((1,1)\)</span> با انرژی <span class="arithmatex">\(3\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(3 \neq 2\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(7 + 3 = 10 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>در خانه‌ی <span class="arithmatex">\((1,1)\)</span>:</strong><ul>
+<li>حرکت به پایین به خانه‌ی <span class="arithmatex">\((2,1)\)</span> مسدود است (مانع <code>#</code>).</li>
+<li>تنها مسیر ممکن، حرکت به راست به خانه‌ی <span class="arithmatex">\((1,2)\)</span> با انرژی <span class="arithmatex">\(4\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(4 \neq 3\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(10 + 4 = 14 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>در خانه‌ی <span class="arithmatex">\((1,2)\)</span>:</strong><ul>
+<li>تنها حرکت ممکن، رفتن به پایین به خانه‌ی مقصد <span class="arithmatex">\((2,2)\)</span> با انرژی <span class="arithmatex">\(1\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(1 \neq 4\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(14 + 1 = 15 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>نتیجه‌ی نهایی:</strong> در کل شبکه دقیقاً ۱ مسیر معتبر وجود دارد و مجموع کل انرژی‌های این مسیر برابر است با:</p>
+<div class="arithmatex">\[
+5 + 2 + 3 + 4 + 1 = 15
+\]</div>
+<h4 id="_54">ورودی نمونه ۳<a class="headerlink" href="#_54" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>4 3
+10 2 #
+-100 5 -100
+-100 -3 4
+-100 -100 2
+</code></pre></div>
+<h4 id="_55">خروجی نمونه ۳<a class="headerlink" href="#_55" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>20
+</code></pre></div>
+<p>شبکه دارای ۴ سطر و ۳ ستون است. خانه‌ی شروع <span class="arithmatex">\((0,0)\)</span> دارای انرژی اولیه‌ی <span class="arithmatex">\(10\)</span> است.</p>
+<ul>
+<li><strong>قدم اول (شروع):</strong> در خانه‌ی <span class="arithmatex">\((0,0)\)</span> قرار داریم. مجموع انرژی انباشته <span class="arithmatex">\(10 \ge 0\)</span> است.</li>
+<li><strong>بررسی حرکت به پایین از <span class="arithmatex">\((0,0)\)</span>:</strong> خانه‌ی <span class="arithmatex">\((1,0)\)</span> دارای انرژی <span class="arithmatex">\(-100\)</span> است و مجموع <span class="arithmatex">\(10 + (-100) = -90 &lt; 0\)</span> می‌شود ← مسدود.</li>
+<li><strong>بررسی حرکت به راست از <span class="arithmatex">\((0,0)\)</span>:</strong> تنها راه ممکن، حرکت به خانه‌ی <span class="arithmatex">\((0,1)\)</span> با انرژی <span class="arithmatex">\(2\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(2 \neq 10\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(10 + 2 = 12 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+<li><strong>در خانه‌ی <span class="arithmatex">\((0,1)\)</span>:</strong><ul>
+<li>حرکت به راست به خانه‌ی <span class="arithmatex">\((0,2)\)</span> ممنوع است (مانع <code>#</code>).</li>
+<li>تنها راه، حرکت به پایین به خانه‌ی <span class="arithmatex">\((1,1)\)</span> با انرژی <span class="arithmatex">\(5\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(5 \neq 2\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(12 + 5 = 17 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>در خانه‌ی <span class="arithmatex">\((1,1)\)</span>:</strong><ul>
+<li>حرکت به راست به خانه‌ی <span class="arithmatex">\((1,2)\)</span> با انرژی <span class="arithmatex">\(-100\)</span> مجموع را منفی می‌کند (<span class="arithmatex">\(17 + (-100) = -83 &lt; 0\)</span>) ← مسدود.</li>
+<li>تنها راه، حرکت به پایین به خانه‌ی <span class="arithmatex">\((2,1)\)</span> با انرژی <span class="arithmatex">\(-3\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(-3 \neq 5\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(17 + (-3) = 14 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>در خانه‌ی <span class="arithmatex">\((2,1)\)</span>:</strong><ul>
+<li>حرکت به پایین به خانه‌ی <span class="arithmatex">\((3,1)\)</span> با انرژی <span class="arithmatex">\(-100\)</span> مجموع را منفی می‌کند (<span class="arithmatex">\(14 + (-100) = -86 &lt; 0\)</span>) ← مسدود.</li>
+<li>تنها راه، حرکت به راست به خانه‌ی <span class="arithmatex">\((2,2)\)</span> با انرژی <span class="arithmatex">\(4\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(4 \neq -3\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(14 + 4 = 18 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>در خانه‌ی <span class="arithmatex">\((2,2)\)</span>:</strong><ul>
+<li>تنها حرکت ممکن، رفتن به پایین به خانه‌ی مقصد <span class="arithmatex">\((3,2)\)</span> با انرژی <span class="arithmatex">\(2\)</span> است:<ul>
+<li>شرط ۱: <span class="arithmatex">\(2 \neq 4\)</span> برقرار است.</li>
+<li>شرط ۲: مجموع انباشته <span class="arithmatex">\(18 + 2 = 20 \ge 0\)</span> برقرار است.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>نتیجه‌ی نهایی:</strong> در تمام شبکه دقیقاً ۱ مسیر معتبر وجود دارد و مجموع کل انرژی‌های این مسیر برابر است با:</p>
+<div class="arithmatex">\[
+10 + 2 + 5 + (-3) + 4 + 2 = 20
+\]</div>
+<details class="success">
+<summary>مشاهده پاسخ</summary>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  برگشت به بالا
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      دانشگاه هرمزگان — گروه مهندسی برق و کامپیوتر
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u06a9\u067e\u06cc \u0634\u062f", "clipboard.copy": "\u06a9\u067e\u06cc \u06a9\u0631\u062f\u0646", "search.result.more.one": "1 \u0645\u0648\u0631\u062f \u062f\u06cc\u06af\u0631 \u062f\u0631 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647", "search.result.more.other": "# \u0645\u0648\u0631\u062f \u062f\u06cc\u06af\u0631 \u062f\u0631 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647", "search.result.none": "\u0633\u0646\u062f\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f", "search.result.one": "1 \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.other": "# \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.placeholder": "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u062c\u0633\u062a\u062c\u0648 \u062a\u0627\u06cc\u067e \u06a9\u0646\u06cc\u062f", "search.result.term.missing": "\u0645\u0648\u062c\u0648\u062f \u0646\u06cc\u0633\u062a", "select.version": "\u0627\u0646\u062a\u062e\u0627\u0628 \u0648\u06cc\u0631\u0627\u06cc\u0634"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../assets/menu-toggle.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
