@@ -14,8 +14,6 @@
         <link rel="prev" href="../../theory/exercise-01/">
       
       
-        <link rel="next" href="../exercise-02/">
-      
       
         
       
@@ -678,34 +676,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../exercise-02/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    تمرین سری دوم
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -867,7 +837,6 @@ heights = [2,1,5,6,2,3]
 \]</div>
 <h3 id="_4">خروجی<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>در تنها خط خروجی، بزرگ‌ترین مساحت مستطیلی را که می‌توان درون هیستوگرام تشکیل داد، چاپ کنید.</p>
-<p>توجه کنید که مساحت می‌تواند تا <span class="arithmatex">\(2\times10^{14}\)</span> شود؛ بنابراین از نوع داده‌ی ۶۴ بیتی (مانند <code>long long</code>) استفاده کنید.</p>
 <h3 id="_5">مثال<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <h4 id="_6">ورودی نمونه ۱<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>2 1 5 6 2 3
@@ -901,46 +870,7 @@ heights = [2,1,5,6,2,3]
 \]</div>
 <details class="success">
 <summary>مشاهده پاسخ</summary>
-<p><strong>ایده:</strong> از یک پشته‌ی یکنوا (با ارتفاع‌های صعودی) استفاده می‌کنیم. هنگامی که به میله‌ای کوتاه‌تر (یا هم‌ارتفاع) از بالای پشته می‌رسیم، میله‌ی بالای پشته نمی‌تواند بیشتر به راست گسترش پیدا کند. در این لحظه مستطیلی را که ارتفاعش برابر آن میله است محاسبه می‌کنیم:</p>
-<ul>
-<li>مرز راست مستطیل: اندیس فعلی <span class="arithmatex">\(i\)</span> (خود <span class="arithmatex">\(i\)</span> جزو مستطیل نیست)</li>
-<li>مرز چپ مستطیل: اندیس بعد از عنصر زیرین پشته (یا ۰ اگر پشته خالی شود)</li>
-</ul>
-<p>در انتها یک میله‌ی مجازی با ارتفاع ۰ اضافه می‌کنیم تا همه‌ی عناصر باقی‌مانده در پشته پردازش شوند.</p>
-<div class="highlight"><pre><span></span><code>function LargestRectangle(heights):
-    n &lt;- length(heights)
-    stack &lt;- empty stack of indices
-    best &lt;- 0
-
-    for i from 0 to n:
-        if i &lt; n then
-            currentHeight &lt;- heights[i]
-        else
-            currentHeight &lt;- 0          // virtual bar that flushes the stack
-        end if
-
-        while stack is not empty and heights[top(stack)] &gt;= currentHeight:
-            barIndex &lt;- pop(stack)
-            barHeight &lt;- heights[barIndex]
-
-            if stack is empty then
-                leftBoundary &lt;- 0
-            else
-                leftBoundary &lt;- top(stack) + 1
-            end if
-
-            width &lt;- i - leftBoundary
-            area &lt;- barHeight * width        // use 64-bit integers
-            best &lt;- max(best, area)
-        end while
-
-        push(stack, i)
-    end for
-
-    return best
-</code></pre></div>
-<p><strong>پیچیدگی زمانی:</strong> <span class="arithmatex">\(O(n)\)</span> — هر اندیس دقیقاً یک بار وارد و حداکثر یک بار از پشته خارج می‌شود.</p>
-<p><strong>پیچیدگی مکانی:</strong> <span class="arithmatex">\(O(n)\)</span> — برای پشته در بدترین حالت (آرایه‌ی صعودی).</p>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
 </details>
 <hr />
 <h2 id="_12">سؤال ۲ — معکوس کردن حروف هر کلمه<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
@@ -968,37 +898,7 @@ heights = [2,1,5,6,2,3]
 </code></pre></div>
 <details class="success">
 <summary>مشاهده پاسخ</summary>
-<p><strong>ایده:</strong> رشته را از چپ به راست پیمایش می‌کنیم. هر بار ابتدا و انتهای یک کلمه (دنباله‌ی بدون فاصله) را پیدا می‌کنیم و حروف آن بازه را با روش دو اشاره‌گر جابه‌جا می‌کنیم. فاصله‌ها دست‌نخورده باقی می‌مانند.</p>
-<div class="highlight"><pre><span></span><code>function ReverseEachWord(s):
-    chars &lt;- copy of s as a mutable array of characters
-    n &lt;- length(chars)
-    i &lt;- 0
-
-    while i &lt; n:
-        if chars[i] = ' ' then
-            i &lt;- i + 1
-            continue
-        end if
-
-        start &lt;- i
-        while i &lt; n and chars[i] != ' ':
-            i &lt;- i + 1
-        end while
-        end &lt;- i - 1                       // last character of the current word
-
-        left &lt;- start
-        right &lt;- end
-        while left &lt; right:
-            swap(chars[left], chars[right])
-            left &lt;- left + 1
-            right &lt;- right - 1
-        end while
-    end while
-
-    return chars joined into a string
-</code></pre></div>
-<p><strong>پیچیدگی زمانی:</strong> <span class="arithmatex">\(O(n)\)</span> — هر کاراکتر حداکثر یک بار برای پیدا کردن کلمه و یک بار برای جابه‌جایی پردازش می‌شود.</p>
-<p><strong>پیچیدگی مکانی:</strong> <span class="arithmatex">\(O(n)\)</span> برای نگهداری کپی قابل تغییر رشته (حافظه‌ی کمکی علاوه بر آن <span class="arithmatex">\(O(1)\)</span> است).</p>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
 </details>
 <hr />
 <h2 id="_20">سؤال ۳ — آرایه‌ی تعادل<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
@@ -1021,7 +921,6 @@ heights = [2,1,5,6,2,3]
 <h3 id="_22">خروجی<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
 <p>در تنها خط خروجی، اولین اندیسی را چاپ کنید که با حذف عنصر موجود در آن، مجموع عناصر سمت چپ و راست برابر شود.</p>
 <p>اگر چنین اندیسی وجود نداشت، مقدار <code>-1</code> را چاپ کنید.</p>
-<p>مجموع عناصر می‌تواند تا <span class="arithmatex">\(10^{14}\)</span> شود؛ بنابراین از نوع داده‌ی ۶۴ بیتی استفاده کنید.</p>
 <h3 id="_23">مثال<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
 <h4 id="_24">ورودی نمونه ۱<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>6
@@ -1065,31 +964,7 @@ heights = [2,1,5,6,2,3]
 <p>با حذف تنها عنصر آرایه، هر دو سمت خالی هستند و مجموع هر دو طرف برابر با صفر است.</p>
 <details class="success">
 <summary>مشاهده پاسخ</summary>
-<p><strong>ایده:</strong> مجموع کل آرایه را محاسبه می‌کنیم. هنگام پیمایش، مجموع عناصر قبل از اندیس فعلی (<span class="arithmatex">\(left\)</span>) را نگه می‌داریم. مجموع سمت راست برابر است با:</p>
-<div class="arithmatex">\[
-right = total - left - A_i
-\]</div>
-<p>اولین اندیسی که <span class="arithmatex">\(left = right\)</span> شود، پاسخ است.</p>
-<div class="highlight"><pre><span></span><code>function BalanceIndex(n, A):
-    // A is 1-indexed: A[1], A[2], ..., A[n]
-    total &lt;- 0                          // 64-bit integer
-    for i from 1 to n:
-        total &lt;- total + A[i]
-    end for
-
-    leftSum &lt;- 0                        // 64-bit integer
-    for i from 1 to n:
-        rightSum &lt;- total - leftSum - A[i]
-        if leftSum = rightSum then
-            return i
-        end if
-        leftSum &lt;- leftSum + A[i]
-    end for
-
-    return -1
-</code></pre></div>
-<p><strong>پیچیدگی زمانی:</strong> <span class="arithmatex">\(O(n)\)</span> — دو پیمایش خطی.</p>
-<p><strong>پیچیدگی مکانی:</strong> <span class="arithmatex">\(O(1)\)</span> — فقط چند متغیر کمکی (علاوه بر خود آرایه‌ی ورودی).</p>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
 </details>
 <hr />
 <h2 id="_32">سؤال ۴ — وارونگی<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
@@ -1124,7 +999,7 @@ A = [3,1,2]
 <p>تضمین می‌شود که تمام عناصر آرایه متمایز هستند.</p>
 <h3 id="_34">خروجی<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
 <p>در تنها خط خروجی، تعداد وارونگی‌های موجود در آرایه را چاپ کنید.</p>
-<p>توجه کنید که پاسخ ممکن است بزرگ باشد (تا حدود <span class="arithmatex">\(2 \times 10^{10}\)</span>)؛ بنابراین باید از نوع داده‌ای مناسب (۶۴ بیتی) برای ذخیره‌ی آن استفاده کنید.</p>
+<p>توجه کنید که پاسخ ممکن است بزرگ باشد؛ بنابراین باید از نوع داده‌ای مناسب برای ذخیره‌ی آن استفاده کنید.</p>
 <h3 id="_35">مثال<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
 <h4 id="_36">ورودی نمونه ۱<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>5
@@ -1162,64 +1037,7 @@ A = [3,1,2]
 </code></pre></div>
 <details class="success">
 <summary>مشاهده پاسخ</summary>
-<p><strong>ایده:</strong> از مرتب‌سازی ادغامی استفاده می‌کنیم. هنگام ادغام دو نیمه‌ی مرتب‌شده‌ی <code>left</code> و <code>right</code>، اگر <code>left[i] &gt; right[j]</code> باشد، همه‌ی عناصر <code>left[i..end]</code> (چون مرتب‌اند) از <code>right[j]</code> بزرگ‌ترند و هر کدام یک وارونگی می‌سازند.</p>
-<div class="highlight"><pre><span></span><code>function CountInversions(n, A):
-    // A is 0-indexed: A[0], ..., A[n-1]
-    buffer &lt;- array of size n
-    return SortAndCount(A, buffer, 0, n - 1)
-
-
-function SortAndCount(A, buffer, low, high):
-    if low &gt;= high then
-        return 0
-    end if
-
-    mid &lt;- low + (high - low) / 2          // integer division
-    count &lt;- 0
-    count &lt;- count + SortAndCount(A, buffer, low, mid)
-    count &lt;- count + SortAndCount(A, buffer, mid + 1, high)
-    count &lt;- count + MergeAndCount(A, buffer, low, mid, high)
-    return count
-
-
-function MergeAndCount(A, buffer, low, mid, high):
-    i &lt;- low                                // pointer in left half  A[low..mid]
-    j &lt;- mid + 1                            // pointer in right half A[mid+1..high]
-    k &lt;- low                                // pointer in buffer
-    count &lt;- 0                              // 64-bit integer
-
-    while i &lt;= mid and j &lt;= high:
-        if A[i] &lt; A[j] then                 // elements are distinct
-            buffer[k] &lt;- A[i]
-            i &lt;- i + 1
-        else
-            buffer[k] &lt;- A[j]
-            count &lt;- count + (mid - i + 1)  // all of A[i..mid] are greater than A[j]
-            j &lt;- j + 1
-        end if
-        k &lt;- k + 1
-    end while
-
-    while i &lt;= mid:
-        buffer[k] &lt;- A[i]
-        i &lt;- i + 1
-        k &lt;- k + 1
-    end while
-
-    while j &lt;= high:
-        buffer[k] &lt;- A[j]
-        j &lt;- j + 1
-        k &lt;- k + 1
-    end while
-
-    for t from low to high:
-        A[t] &lt;- buffer[t]
-    end for
-
-    return count
-</code></pre></div>
-<p><strong>پیچیدگی زمانی:</strong> <span class="arithmatex">\(O(n \log n)\)</span> — عمق بازگشت <span class="arithmatex">\(\log n\)</span> و در هر سطح ادغام روی در مجموع <span class="arithmatex">\(n\)</span> عنصر انجام می‌شود.</p>
-<p><strong>پیچیدگی مکانی:</strong> <span class="arithmatex">\(O(n)\)</span> برای آرایه‌ی کمکی <code>buffer</code>، به‌علاوه‌ی <span class="arithmatex">\(O(\log n)\)</span> برای پشته‌ی بازگشت.</p>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
 </details>
 <hr />
 <h2 id="_44">سؤال ۵ — سکه‌های سزار<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h2>
@@ -1227,7 +1045,7 @@ function MergeAndCount(A, buffer, low, mid, high):
 <p><strong>محدودیت زمان:</strong> ۳ ثانیه<br />
 <strong>محدودیت حافظه:</strong> ۲۵۶ مگابایت</p>
 <p>گایوس ژولیوس سزار برای حمله به گالیا به کمک شما نیاز دارد. او قصد دارد تا با خرج کردن کمترین میزان پول، جنگ را پیروز شود. او که می‌داند شما خیلی از ساز و کار جنگ سر در نمی‌آورید، مسئله را برای شما این‌گونه ساده کرده است.</p>
-<p>او در کل <span class="arithmatex">\(n\)</span> سرباز دارد که قدرت هر کدام را با <span class="arithmatex">\(a_i\)</span> نشان می‌دهیم. همچنین <span class="arithmatex">\(m\)</span> دشمن وجود دارد که باید شکست داده شوند. قدرت دفاع و قدرت حمله‌ی هر یک از دشمنان را به ترتیب با <span class="arithmatex">\(e_{di}\)</span> و <span class="arithmatex">\(e_{ai}\)</span> نشان می‌دهیم.</p>
+<p>او در کل <span class="arithmatex">\(n\)</span> سرباز دارد که قدرت هر کدام را با <span class="arithmatex">\(a_i\)</span> نشان می‌دهیم. همچنین <span class="arithmatex">\(m\)</span> دشمن وجود دارد که باید شکست داده شوند. قدرت حمله و قدرت دفاع هر یک از دشمنان را با <span class="arithmatex">\(e_{ai}\)</span> و <span class="arithmatex">\(e_{di}\)</span> نشان می‌دهیم.</p>
 <p>شما باید از بین سربازهای سزار، سربازی را برای شکست دادن سرباز حریف انتخاب کنید. شرط اینکه سرباز انتخاب‌شده بتواند دشمن را شکست دهد این است که قدرت حمله‌اش از قدرت دفاع سرباز حریف بیشتر یا مساوی باشد.</p>
 <p>همچنین برای احتیاط لازم است مجموع قدرت سربازهای باقی‌مانده، بیشتر یا مساوی قدرت حمله‌ی دشمن باشد.</p>
 <p>شما می‌توانید با خرج کردن یک سکه، قدرت هر کدام از سربازهایتان را یک واحد افزایش دهید.</p>
@@ -1235,7 +1053,7 @@ function MergeAndCount(A, buffer, low, mid, high):
 <h3 id="_45">ورودی<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
 <p>در خط اول ورودی تعداد سربازان سزار، <span class="arithmatex">\(n\)</span>، می‌آید.</p>
 <p>در خط دوم قدرت هر یک از سربازان با فاصله می‌آید. قدرت سربازان از کوچک به بزرگ مرتب شده است.</p>
-<p>در خط سوم تعداد دشمنان، <span class="arithmatex">\(m\)</span>، می‌آید. در هر یک از <span class="arithmatex">\(m\)</span> خط بعدی، دو عدد <span class="arithmatex">\(e_{di}\)</span> و <span class="arithmatex">\(e_{ai}\)</span> (به ترتیب <strong>قدرت دفاع</strong> و <strong>قدرت حمله</strong>‌ی دشمن <span class="arithmatex">\(i\)</span>-ام) می‌آید.</p>
+<p>در خط سوم تعداد دشمنان، <span class="arithmatex">\(m\)</span>، می‌آید و در خط بعدی به ترتیب قدرت دفاع و حمله‌ی هر یک از دشمنان می‌آید.</p>
 <p>محدودیت‌ها:</p>
 <div class="arithmatex">\[
 1 \le n,m,a_i \le 2\times10^5
@@ -1246,7 +1064,6 @@ function MergeAndCount(A, buffer, low, mid, high):
 <h3 id="_46">خروجی<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h3>
 <p>به ترتیب در <span class="arithmatex">\(m\)</span> خط، برای هر دشمن کمترین میزان سکه‌ای که سزار باید خرج کند را چاپ کنید.</p>
 <p>توجه کنید که هر دشمن را جدا در نظر می‌گیریم و هزینه‌هایی که برای دشمن‌های قبلی کرده‌ایم، در دشمن‌های بعدی تأثیری نخواهد داشت.</p>
-<p>پاسخ می‌تواند تا حدود <span class="arithmatex">\(2 \times 10^{12}\)</span> شود؛ بنابراین از نوع داده‌ی ۶۴ بیتی (مانند <code>long long</code>) استفاده کنید.</p>
 <h3 id="_47">مثال<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h3>
 <h4 id="_48">ورودی نمونه<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>8
@@ -1254,7 +1071,7 @@ function MergeAndCount(A, buffer, low, mid, high):
 3
 12 70
 4 66
-23 50
+17 80
 </code></pre></div>
 <h4 id="_49">خروجی نمونه<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>5
@@ -1268,104 +1085,7 @@ function MergeAndCount(A, buffer, low, mid, high):
 <p>برای شکست دادن دشمن سوم، کافیست سرباز با قدرت <span class="arithmatex">\(20\)</span> را انتخاب کنیم و قدرت او را <span class="arithmatex">\(3\)</span> واحد افزایش دهیم. پس حداقل <span class="arithmatex">\(3\)</span> سکه خرج می‌کنیم.</p>
 <details class="success">
 <summary>مشاهده پاسخ</summary>
-<p><strong>ایده:</strong> مجموع قدرت همه‌ی سربازان را <span class="arithmatex">\(S\)</span> می‌نامیم. اگر برای دشمنی با دفاع <span class="arithmatex">\(d\)</span> و حمله‌ی <span class="arithmatex">\(atk\)</span> سربازی با قدرت <span class="arithmatex">\(x\)</span> را انتخاب کنیم، هزینه برابر است با:</p>
-<div class="arithmatex">\[
-f(x)=\max(0,\;d-x)+\max(0,\;atk-(S-x))
-\]</div>
-<p>جمله‌ی اول، هزینه‌ی رساندن سرباز منتخب به دفاع دشمن و جمله‌ی دوم، هزینه‌ی تقویت سربازان باقی‌مانده تا مجموعشان به حمله‌ی دشمن برسد، است.</p>
-<ul>
-<li><strong>برای <span class="arithmatex">\(x \ge d\)</span>:</strong> جمله‌ی اول صفر است و جمله‌ی دوم با بزرگ‌تر شدن <span class="arithmatex">\(x\)</span> کاهش پیدا نمی‌کند. پس بهترین انتخاب، <strong>کوچک‌ترین سرباز با <span class="arithmatex">\(x \ge d\)</span></strong> است.</li>
-<li><strong>برای <span class="arithmatex">\(x &lt; d\)</span>:</strong> با افزایش <span class="arithmatex">\(x\)</span> به اندازه‌ی ۱، جمله‌ی اول یک واحد کم می‌شود و جمله‌ی دوم حداکثر یک واحد زیاد می‌شود. پس <span class="arithmatex">\(f\)</span> صعودی نیست و بهترین انتخاب، <strong>بزرگ‌ترین سرباز با <span class="arithmatex">\(x &lt; d\)</span></strong> است.</li>
-</ul>
-<p>بنابراین برای هر دشمن فقط دو نامزد داریم که با جست‌وجوی دودویی (اولین عنصر بزرگ‌تر یا مساوی <span class="arithmatex">\(d\)</span>) پیدا می‌شوند.</p>
-<div class="highlight"><pre><span></span><code>function CaesarCoins(n, a, m, enemies):
-    // a: array of soldier strengths, sorted in non-decreasing order, 0-indexed
-    // enemies[i] = (defense, attack)
-    totalStrength &lt;- 0                      // 64-bit integer
-    for i from 0 to n - 1:
-        totalStrength &lt;- totalStrength + a[i]
-    end for
-
-    answers &lt;- array of size m
-
-    for e from 0 to m - 1:
-        defense &lt;- enemies[e].defense
-        attack  &lt;- enemies[e].attack
-        best &lt;- infinity
-
-        k &lt;- LowerBound(a, n, defense)      // first index with a[k] &gt;= defense
-
-        if k &lt; n then
-            // smallest soldier that already satisfies the defense requirement
-            best &lt;- min(best, Cost(a[k], defense, attack, totalStrength))
-        end if
-
-        if k &gt; 0 then
-            // largest soldier that is weaker than the defense requirement
-            best &lt;- min(best, Cost(a[k - 1], defense, attack, totalStrength))
-        end if
-
-        answers[e] &lt;- best
-    end for
-
-    return answers
-
-
-function LowerBound(a, n, value):
-    low &lt;- 0
-    high &lt;- n                               // search in the half-open range [low, high)
-
-    while low &lt; high:
-        mid &lt;- low + (high - low) / 2       // integer division
-        if a[mid] &gt;= value then
-            high &lt;- mid
-        else
-            low &lt;- mid + 1
-        end if
-    end while
-
-    return low                              // equals n if every element is smaller than value
-
-
-function Cost(x, defense, attack, totalStrength):
-    costForSelected &lt;- max(0, defense - x)
-    remainingStrength &lt;- totalStrength - x
-    costForRemaining &lt;- max(0, attack - remainingStrength)
-    return costForSelected + costForRemaining
-</code></pre></div>
-<p><strong>بررسی نمونه</strong> (با <span class="arithmatex">\(S = 77\)</span>):</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">دشمن <span class="arithmatex">\((d, atk)\)</span></th>
-<th style="text-align: center;">نامزدها <span class="arithmatex">\(x\)</span></th>
-<th style="text-align: center;">هزینه‌ها</th>
-<th style="text-align: center;">پاسخ</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><span class="arithmatex">\((12, 70)\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(11,\ 16\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1+4=5,\ 0+9=9\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="arithmatex">\((4, 66)\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2,\ 4\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2+0=2,\ 0+0=0\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="arithmatex">\((23, 50)\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(20\)</span> (نامزد دیگری وجود ندارد)</td>
-<td style="text-align: center;"><span class="arithmatex">\(3+0=3\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><strong>پیچیدگی زمانی:</strong> <span class="arithmatex">\(O(n + m \log n)\)</span> — محاسبه‌ی <span class="arithmatex">\(S\)</span> در <span class="arithmatex">\(O(n)\)</span> و برای هر دشمن یک جست‌وجوی دودویی در <span class="arithmatex">\(O(\log n)\)</span>.</p>
-<p><strong>پیچیدگی مکانی:</strong> <span class="arithmatex">\(O(m)\)</span> برای آرایه‌ی خروجی (حافظه‌ی کمکی علاوه بر ورودی و خروجی <span class="arithmatex">\(O(1)\)</span> است).</p>
+<!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
 </details>
 
 
