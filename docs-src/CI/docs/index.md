@@ -12,3 +12,4 @@
 |    ۴ | MLP, GD, BackPropagation   | ۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه چهارم](1405-1406-paeez/assets/slides/ci-4.pdf)                      |        -       | [تمرین جلسه چهارم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
 |    ۵ | MLP, FeedForward, SGD   | ۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه پنجم](1405-1406-paeez/assets/slides/ci-4.pdf)                      |        -       | [تمرین جلسه پنجم](1405-1406-paeez/assets/exercises/t1.pdf)                     |
 
+kZtqRIrGBFlH

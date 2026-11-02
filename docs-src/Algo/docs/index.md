@@ -15,6 +15,14 @@
 |    ۷ | حریصانه I   |۱۲ مهر ۱۴۰۵ | [اسلایدهای جلسه هفتم](1405-1406-paeez/assets/slides/s6.pdf)                      |        -       | [تمرین جلسه هفتم](1405-1406-paeez/assets/exercises/t3.pdf)                     |
 |    ۸ | حریصانه II   | ۱۴ مهر ۱۴۰۵ | [اسلایدهای جلسه هشتم](1405-1406-paeez/assets/slides/s8.pdf)                      |        -       | [تمرین جلسه هشتم](1405-1406-paeez/assets/exercises/t3.pdf)                     |
 |    ۹ | برنامه ریزی پویا I  | ۱۹ مهر ۱۴۰۵ | [اسلایدهای جلسه نهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه نهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
+|    ۱۰ | برنامه ریزی پویا II  | ۲۱ مهر ۱۴۰۵ | [اسلایدهای جلسه دهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه دهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
+|    ۱۱ | برنامه ریزی پویا III  | ۲۶ مهر ۱۴۰۵ | [اسلایدهای جلسه یازدهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه یازدهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
+|    ۱۲ | برنامه ریزی پویا IIII  | ۲۸ مهر ۱۴۰۵ | [اسلایدهای جلسه دوازدهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه دوازدهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
+|    ۱۳ | گراف I  | ۳ آبان ۱۴۰۵ | [اسلایدهای جلسه سیزدهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه سیزدهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
+|    ۱۴ | گراف II  | ۵ آبان ۱۴۰۵ | [اسلایدهای جلسه چهاردهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه چهاردهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
+|    ۱۵ | گراف III  | ۱۰ آبان ۱۴۰۵ | [اسلایدهای جلسه پانزدهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه پانزدهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
+|    ۱۶ | گراف IIII  | ۱۲ آبان ۱۴۰۵ | [اسلایدهای جلسه شانزدهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه شانزدهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
+
 
 **مراجع درس**:
 
