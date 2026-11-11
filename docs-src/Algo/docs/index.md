@@ -22,7 +22,8 @@
 |    ۱۴ | گراف II  | ۵ آبان ۱۴۰۵ | [اسلایدهای جلسه چهاردهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه چهاردهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
 |    ۱۵ | گراف III  | ۱۰ آبان ۱۴۰۵ | [اسلایدهای جلسه پانزدهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه پانزدهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
 |    ۱۶ | گراف IIII  | ۱۲ آبان ۱۴۰۵ | [اسلایدهای جلسه شانزدهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه شانزدهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
-
+|    ۱۷ |شار بیشینه I  | ۱۷ آبان ۱۴۰۵ | [اسلایدهای جلسه هفدهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه هفدهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
+|    ۱۸ |شار بیشینه II  | ۱۹ آبان ۱۴۰۵ | [اسلایدهای جلسه هجدهم](1405-1406-paeez/assets/slides/s9.pdf)                      |        -       | [تمرین جلسه هجدهم](1405-1406-paeez/assets/exercises/t2.pdf)                     |
 
 **مراجع درس**:
 
