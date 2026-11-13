@@ -49,6 +49,8 @@ $$
 
 در تنها خط خروجی، بزرگ‌ترین مساحت مستطیلی را که می‌توان درون هیستوگرام تشکیل داد، چاپ کنید.
 
+توجه کنید که مساحت می‌تواند تا $2\times10^{14}$ شود؛ بنابراین از نوع داده‌ی ۶۴ بیتی (مانند `long long`) استفاده کنید.
+
 ### مثال
 
 #### ورودی نمونه ۱
@@ -107,7 +109,50 @@ $$
 
 ??? success "مشاهده پاسخ"
 
-    <!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+    **ایده:** از یک پشته‌ی یکنوا (با ارتفاع‌های صعودی) استفاده می‌کنیم. هنگامی که به میله‌ای کوتاه‌تر (یا هم‌ارتفاع) از بالای پشته می‌رسیم، میله‌ی بالای پشته نمی‌تواند بیشتر به راست گسترش پیدا کند. در این لحظه مستطیلی را که ارتفاعش برابر آن میله است محاسبه می‌کنیم:
+
+    - مرز راست مستطیل: اندیس فعلی $i$ (خود $i$ جزو مستطیل نیست)
+    - مرز چپ مستطیل: اندیس بعد از عنصر زیرین پشته (یا ۰ اگر پشته خالی شود)
+
+    در انتها یک میله‌ی مجازی با ارتفاع ۰ اضافه می‌کنیم تا همه‌ی عناصر باقی‌مانده در پشته پردازش شوند.
+
+    ```text
+    function LargestRectangle(heights):
+        n <- length(heights)
+        stack <- empty stack of indices
+        best <- 0
+
+        for i from 0 to n:
+            if i < n then
+                currentHeight <- heights[i]
+            else
+                currentHeight <- 0          // virtual bar that flushes the stack
+            end if
+
+            while stack is not empty and heights[top(stack)] >= currentHeight:
+                barIndex <- pop(stack)
+                barHeight <- heights[barIndex]
+
+                if stack is empty then
+                    leftBoundary <- 0
+                else
+                    leftBoundary <- top(stack) + 1
+                end if
+
+                width <- i - leftBoundary
+                area <- barHeight * width        // use 64-bit integers
+                best <- max(best, area)
+            end while
+
+            push(stack, i)
+        end for
+
+        return best
+    ```
+
+    **پیچیدگی زمانی:** $O(n)$ — هر اندیس دقیقاً یک بار وارد و حداکثر یک بار از پشته خارج می‌شود.
+
+    **پیچیدگی مکانی:** $O(n)$ — برای پشته در بدترین حالت (آرایه‌ی صعودی).
 
 ---
 
@@ -158,7 +203,41 @@ I evol gnimmargorp
 
 ??? success "مشاهده پاسخ"
 
-    <!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+    **ایده:** رشته را از چپ به راست پیمایش می‌کنیم. هر بار ابتدا و انتهای یک کلمه (دنباله‌ی بدون فاصله) را پیدا می‌کنیم و حروف آن بازه را با روش دو اشاره‌گر جابه‌جا می‌کنیم. فاصله‌ها دست‌نخورده باقی می‌مانند.
+
+    ```text
+    function ReverseEachWord(s):
+        chars <- copy of s as a mutable array of characters
+        n <- length(chars)
+        i <- 0
+
+        while i < n:
+            if chars[i] = ' ' then
+                i <- i + 1
+                continue
+            end if
+
+            start <- i
+            while i < n and chars[i] != ' ':
+                i <- i + 1
+            end while
+            end <- i - 1                       // last character of the current word
+
+            left <- start
+            right <- end
+            while left < right:
+                swap(chars[left], chars[right])
+                left <- left + 1
+                right <- right - 1
+            end while
+        end while
+
+        return chars joined into a string
+    ```
+
+    **پیچیدگی زمانی:** $O(n)$ — هر کاراکتر حداکثر یک بار برای پیدا کردن کلمه و یک بار برای جابه‌جایی پردازش می‌شود.
+
+    **پیچیدگی مکانی:** $O(n)$ برای نگهداری کپی قابل تغییر رشته (حافظه‌ی کمکی علاوه بر آن $O(1)$ است).
 
 ---
 
@@ -196,6 +275,8 @@ $$
 در تنها خط خروجی، اولین اندیسی را چاپ کنید که با حذف عنصر موجود در آن، مجموع عناصر سمت چپ و راست برابر شود.
 
 اگر چنین اندیسی وجود نداشت، مقدار `-1` را چاپ کنید.
+
+مجموع عناصر می‌تواند تا $10^{14}$ شود؛ بنابراین از نوع داده‌ی ۶۴ بیتی استفاده کنید.
 
 ### مثال
 
@@ -273,7 +354,37 @@ $$
 
 ??? success "مشاهده پاسخ"
 
-    <!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+    **ایده:** مجموع کل آرایه را محاسبه می‌کنیم. هنگام پیمایش، مجموع عناصر قبل از اندیس فعلی ($left$) را نگه می‌داریم. مجموع سمت راست برابر است با:
+
+    $$
+    right = total - left - A_i
+    $$
+
+    اولین اندیسی که $left = right$ شود، پاسخ است.
+
+    ```text
+    function BalanceIndex(n, A):
+        // A is 1-indexed: A[1], A[2], ..., A[n]
+        total <- 0                          // 64-bit integer
+        for i from 1 to n:
+            total <- total + A[i]
+        end for
+
+        leftSum <- 0                        // 64-bit integer
+        for i from 1 to n:
+            rightSum <- total - leftSum - A[i]
+            if leftSum = rightSum then
+                return i
+            end if
+            leftSum <- leftSum + A[i]
+        end for
+
+        return -1
+    ```
+
+    **پیچیدگی زمانی:** $O(n)$ — دو پیمایش خطی.
+
+    **پیچیدگی مکانی:** $O(1)$ — فقط چند متغیر کمکی (علاوه بر خود آرایه‌ی ورودی).
 
 ---
 
@@ -330,7 +441,7 @@ $$
 
 در تنها خط خروجی، تعداد وارونگی‌های موجود در آرایه را چاپ کنید.
 
-توجه کنید که پاسخ ممکن است بزرگ باشد؛ بنابراین باید از نوع داده‌ای مناسب برای ذخیره‌ی آن استفاده کنید.
+توجه کنید که پاسخ ممکن است بزرگ باشد (تا حدود $2 \times 10^{10}$)؛ بنابراین باید از نوع داده‌ای مناسب (۶۴ بیتی) برای ذخیره‌ی آن استفاده کنید.
 
 ### مثال
 
@@ -398,7 +509,68 @@ $$
 
 ??? success "مشاهده پاسخ"
 
-    <!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+    **ایده:** از مرتب‌سازی ادغامی استفاده می‌کنیم. هنگام ادغام دو نیمه‌ی مرتب‌شده‌ی `left` و `right`، اگر `left[i] > right[j]` باشد، همه‌ی عناصر `left[i..end]` (چون مرتب‌اند) از `right[j]` بزرگ‌ترند و هر کدام یک وارونگی می‌سازند.
+
+    ```text
+    function CountInversions(n, A):
+        // A is 0-indexed: A[0], ..., A[n-1]
+        buffer <- array of size n
+        return SortAndCount(A, buffer, 0, n - 1)
+
+
+    function SortAndCount(A, buffer, low, high):
+        if low >= high then
+            return 0
+        end if
+
+        mid <- low + (high - low) / 2          // integer division
+        count <- 0
+        count <- count + SortAndCount(A, buffer, low, mid)
+        count <- count + SortAndCount(A, buffer, mid + 1, high)
+        count <- count + MergeAndCount(A, buffer, low, mid, high)
+        return count
+
+
+    function MergeAndCount(A, buffer, low, mid, high):
+        i <- low                                // pointer in left half  A[low..mid]
+        j <- mid + 1                            // pointer in right half A[mid+1..high]
+        k <- low                                // pointer in buffer
+        count <- 0                              // 64-bit integer
+
+        while i <= mid and j <= high:
+            if A[i] < A[j] then                 // elements are distinct
+                buffer[k] <- A[i]
+                i <- i + 1
+            else
+                buffer[k] <- A[j]
+                count <- count + (mid - i + 1)  // all of A[i..mid] are greater than A[j]
+                j <- j + 1
+            end if
+            k <- k + 1
+        end while
+
+        while i <= mid:
+            buffer[k] <- A[i]
+            i <- i + 1
+            k <- k + 1
+        end while
+
+        while j <= high:
+            buffer[k] <- A[j]
+            j <- j + 1
+            k <- k + 1
+        end while
+
+        for t from low to high:
+            A[t] <- buffer[t]
+        end for
+
+        return count
+    ```
+
+    **پیچیدگی زمانی:** $O(n \log n)$ — عمق بازگشت $\log n$ و در هر سطح ادغام روی در مجموع $n$ عنصر انجام می‌شود.
+
+    **پیچیدگی مکانی:** $O(n)$ برای آرایه‌ی کمکی `buffer`، به‌علاوه‌ی $O(\log n)$ برای پشته‌ی بازگشت.
 
 ---
 
@@ -411,7 +583,7 @@ $$
 
 گایوس ژولیوس سزار برای حمله به گالیا به کمک شما نیاز دارد. او قصد دارد تا با خرج کردن کمترین میزان پول، جنگ را پیروز شود. او که می‌داند شما خیلی از ساز و کار جنگ سر در نمی‌آورید، مسئله را برای شما این‌گونه ساده کرده است.
 
-او در کل $n$ سرباز دارد که قدرت هر کدام را با $a_i$ نشان می‌دهیم. همچنین $m$ دشمن وجود دارد که باید شکست داده شوند. قدرت حمله و قدرت دفاع هر یک از دشمنان را با $e_{ai}$ و $e_{di}$ نشان می‌دهیم.
+او در کل $n$ سرباز دارد که قدرت هر کدام را با $a_i$ نشان می‌دهیم. همچنین $m$ دشمن وجود دارد که باید شکست داده شوند. قدرت دفاع و قدرت حمله‌ی هر یک از دشمنان را به ترتیب با $e_{di}$ و $e_{ai}$ نشان می‌دهیم.
 
 شما باید از بین سربازهای سزار، سربازی را برای شکست دادن سرباز حریف انتخاب کنید. شرط اینکه سرباز انتخاب‌شده بتواند دشمن را شکست دهد این است که قدرت حمله‌اش از قدرت دفاع سرباز حریف بیشتر یا مساوی باشد.
 
@@ -427,7 +599,7 @@ $$
 
 در خط دوم قدرت هر یک از سربازان با فاصله می‌آید. قدرت سربازان از کوچک به بزرگ مرتب شده است.
 
-در خط سوم تعداد دشمنان، $m$، می‌آید و در خط بعدی به ترتیب قدرت دفاع و حمله‌ی هر یک از دشمنان می‌آید.
+در خط سوم تعداد دشمنان، $m$، می‌آید. در هر یک از $m$ خط بعدی، دو عدد $e_{di}$ و $e_{ai}$ (به ترتیب **قدرت دفاع** و **قدرت حمله**‌ی دشمن $i$-ام) می‌آید.
 
 محدودیت‌ها:
 
@@ -445,6 +617,8 @@ $$
 
 توجه کنید که هر دشمن را جدا در نظر می‌گیریم و هزینه‌هایی که برای دشمن‌های قبلی کرده‌ایم، در دشمن‌های بعدی تأثیری نخواهد داشت.
 
+پاسخ می‌تواند تا حدود $2 \times 10^{12}$ شود؛ بنابراین از نوع داده‌ی ۶۴ بیتی (مانند `long long`) استفاده کنید.
+
 ### مثال
 
 #### ورودی نمونه
@@ -455,7 +629,7 @@ $$
 3
 12 70
 4 66
-17 80
+23 50
 ```
 
 #### خروجی نمونه
@@ -478,4 +652,84 @@ $$
 
 ??? success "مشاهده پاسخ"
 
-    <!-- پاسخ این سؤال بعداً اضافه می‌شود. -->
+    **ایده:** مجموع قدرت همه‌ی سربازان را $S$ می‌نامیم. اگر برای دشمنی با دفاع $d$ و حمله‌ی $atk$ سربازی با قدرت $x$ را انتخاب کنیم، هزینه برابر است با:
+
+    $$
+    f(x)=\max(0,\;d-x)+\max(0,\;atk-(S-x))
+    $$
+
+    جمله‌ی اول، هزینه‌ی رساندن سرباز منتخب به دفاع دشمن و جمله‌ی دوم، هزینه‌ی تقویت سربازان باقی‌مانده تا مجموعشان به حمله‌ی دشمن برسد، است.
+
+    - **برای $x \ge d$:** جمله‌ی اول صفر است و جمله‌ی دوم با بزرگ‌تر شدن $x$ کاهش پیدا نمی‌کند. پس بهترین انتخاب، **کوچک‌ترین سرباز با $x \ge d$** است.
+    - **برای $x < d$:** با افزایش $x$ به اندازه‌ی ۱، جمله‌ی اول یک واحد کم می‌شود و جمله‌ی دوم حداکثر یک واحد زیاد می‌شود. پس $f$ صعودی نیست و بهترین انتخاب، **بزرگ‌ترین سرباز با $x < d$** است.
+
+    بنابراین برای هر دشمن فقط دو نامزد داریم که با جست‌وجوی دودویی (اولین عنصر بزرگ‌تر یا مساوی $d$) پیدا می‌شوند.
+
+    ```text
+    function CaesarCoins(n, a, m, enemies):
+        // a: array of soldier strengths, sorted in non-decreasing order, 0-indexed
+        // enemies[i] = (defense, attack)
+        totalStrength <- 0                      // 64-bit integer
+        for i from 0 to n - 1:
+            totalStrength <- totalStrength + a[i]
+        end for
+
+        answers <- array of size m
+
+        for e from 0 to m - 1:
+            defense <- enemies[e].defense
+            attack  <- enemies[e].attack
+            best <- infinity
+
+            k <- LowerBound(a, n, defense)      // first index with a[k] >= defense
+
+            if k < n then
+                // smallest soldier that already satisfies the defense requirement
+                best <- min(best, Cost(a[k], defense, attack, totalStrength))
+            end if
+
+            if k > 0 then
+                // largest soldier that is weaker than the defense requirement
+                best <- min(best, Cost(a[k - 1], defense, attack, totalStrength))
+            end if
+
+            answers[e] <- best
+        end for
+
+        return answers
+
+
+    function LowerBound(a, n, value):
+        low <- 0
+        high <- n                               // search in the half-open range [low, high)
+
+        while low < high:
+            mid <- low + (high - low) / 2       // integer division
+            if a[mid] >= value then
+                high <- mid
+            else
+                low <- mid + 1
+            end if
+        end while
+
+        return low                              // equals n if every element is smaller than value
+
+
+    function Cost(x, defense, attack, totalStrength):
+        costForSelected <- max(0, defense - x)
+        remainingStrength <- totalStrength - x
+        costForRemaining <- max(0, attack - remainingStrength)
+        return costForSelected + costForRemaining
+    ```
+
+    **بررسی نمونه** (با $S = 77$):
+
+    | دشمن $(d, atk)$ | نامزدها $x$ | هزینه‌ها | پاسخ |
+    |:---:|:---:|:---:|:---:|
+    | $(12, 70)$ | $11,\ 16$ | $1+4=5,\ 0+9=9$ | $5$ |
+    | $(4, 66)$ | $2,\ 4$ | $2+0=2,\ 0+0=0$ | $0$ |
+    | $(23, 50)$ | $20$ (نامزد دیگری وجود ندارد) | $3+0=3$ | $3$ |
+
+    **پیچیدگی زمانی:** $O(n + m \log n)$ — محاسبه‌ی $S$ در $O(n)$ و برای هر دشمن یک جست‌وجوی دودویی در $O(\log n)$.
+
+    **پیچیدگی مکانی:** $O(m)$ برای آرایه‌ی خروجی (حافظه‌ی کمکی علاوه بر ورودی و خروجی $O(1)$ است).
